@@ -29,7 +29,7 @@
 
 %-------------------------------------------------------------------------------
 % Extra packages:
-\usepackage{\ATLASLATEXPATH atlaspackage}
+\usepackage[subfigure]{\ATLASLATEXPATH atlaspackage}
 % Commonly used options:
 %  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
 %  backend=bibtex        Use the bibtex backend rather than biber.
@@ -37,6 +37,7 @@
 %  minimal               Minimal set of packages.
 %  default               Standard set of packages.
 %  full                  Full set of packages.
+\usepackage{multirow}
 %-------------------------------------------------------------------------------
 % Style file with biblatex options for ATLAS documents.
 \usepackage{\ATLASLATEXPATH atlasbiblatex}
@@ -91,10 +92,16 @@
 %-------------------------------------------------------------------------------
 \section{Introduction}
 \label{sec:intro}
+\input{include/introduction.tex}
+\clearpage
 %-------------------------------------------------------------------------------
 
-Place your introduction here.
-
+%-------------------------------------------------------------------------------
+\section{Benchmark Models and Datasets}
+\label{sec:benchmark_signals}
+\input{include/benchmark_signals.tex}
+\clearpage
+%-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
 \section{Analysis}

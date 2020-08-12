@@ -4,7 +4,7 @@
 %-------------------------------------------------------------------------------
 
 % Title
-\AtlasTitle{AtlasTitle: Bare bones ATLAS document}
+\AtlasTitle{Search for new phenomena in dijet events using quark gluon tagging based on track multiplicty}
 
 % Draft version:
 % Should be 1.0 for the first circulation, and 2.0 for the second circulation.
@@ -19,7 +19,7 @@
 }
 
 % Author - this does not work with revtex (add it after \begin{document})
-\author{The ATLAS Collaboration}
+%\author{The ATLAS Collaboration}
 
 % Authors and list of contributors to the analysis
 % \AtlasAuthorContributor also adds the name to the author list
@@ -27,21 +27,34 @@
 % Use authblk package if there are multiple authors, which is included by latex/atlascontribute
 % \usepackage{authblk}
 % Use the following 3 lines to have all institutes on one line
-% \makeatletter
-% \renewcommand\AB@affilsepx{, \protect\Affilfont}
-% \makeatother
+\makeatletter
+\renewcommand\AB@affilsepx{, \protect\Affilfont}
+\makeatother
 % \renewcommand\Authands{, } % avoid ``. and'' for last author
 % \renewcommand\Affilfont{\itshape\small} % affiliation formatting
-% \AtlasAuthorContributor{First AtlasAuthorContributor}{a}{Author's contribution.}
-% \AtlasAuthorContributor{Second AtlasAuthorContributor}{b}{Author's contribution.}
-% \AtlasAuthorContributor{Third AtlasAuthorContributor}{a}{Author's contribution.}
-% \AtlasContributor{Fourth AtlasContributor}{Contribution to the analysis.}
-% \author[a]{First Author}
+\AtlasAuthorContributor{Iain~Bertram}{a}{Contact, supervising Rybacki, q/g tagging optimisation of selection.}
+\AtlasAuthorContributor{Jyoti~Biswal}{b}{BG estimation, systematics.}
+\AtlasAuthorContributor{Doug~Gingrich}{b,c}{Supervising Lyons.}
+\AtlasAuthorContributor{Shih-Chieh~Hsu}{d}{Supervising students, checking analysis flow, data MC comparison.}
+\AtlasAuthorContributor{Fairhurst~Lyons}{b}{BG estimation, systematics.}
+\AtlasAuthorContributor{Ben~Nachman}{e}{CP uncertainties; supervising Rybacki.}
+\AtlasAuthorContributor{Nishu~Nishu}{f}{Analysis advice.}
+\AtlasAuthorContributor{Katherine~Rybacki}{a}{q/g tagging systematics, sample production.}
+\AtlasAuthorContributor{Wanyun~Su}{g}{Checking analysis flow, data MC comparison.}
+\AtlasAuthorContributor{Changxu~Wei}{h}{Checking analysis flow, data MC comparison.}
+\AtlasAuthorContributor{Yan~Zhou}{h}{Checking analysis flow, data MC comparison.}
+% \AtlasContributor{.}
+% \author[a]{Iain Bertram}
 % \author[a]{Second Author}
 % \author[b]{Third Author}
-% \affil[a]{One Institution}
-% \affil[b]{Another Institution}
-
+\affil[a]{Lancaster}
+\affil[b]{Alberta}
+\affil[c]{TRIUMF}
+\affil[d]{Seattle Washington}
+\affil[e]{Berkeley LBNL}
+\affil[f]{Shanghai}
+\affil[g]{TDLI}
+\affil[h]{Beijing Tsinghau}
 
 % If a special author list should be indicated via a link use the following code:
 % Include the two lines below if you do not use atlasstyle:
