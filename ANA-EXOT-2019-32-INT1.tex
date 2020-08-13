@@ -38,6 +38,7 @@
 %  default               Standard set of packages.
 %  full                  Full set of packages.
 \usepackage{multirow}
+\usepackage{pdflscape}
 %-------------------------------------------------------------------------------
 % Style file with biblatex options for ATLAS documents.
 \usepackage{\ATLASLATEXPATH atlasbiblatex}
@@ -55,7 +56,7 @@
 
 % Files with references for use with biblatex.
 % Note that biber gives an error if it finds empty bib files.
-% \addbibresource{ANA-EXOT-2019-32-INT1.bib}
+\addbibresource{ANA-EXOT-2019-32-INT1.bib}
 \addbibresource{bib/ATLAS.bib}
 \addbibresource{bib/CMS.bib}
 \addbibresource{bib/ConfNotes.bib}
@@ -102,6 +103,28 @@
 \input{include/benchmark_signals.tex}
 \clearpage
 %-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{``Quark-Gluon'' Sample Selection}
+\label{sec:QGselection}
+\input{include/QGselection.tex}
+\clearpage
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{``Quark-Gluon'' Resonance Search Sensitivity}
+\label{sec:QGselection}
+\input{include/QGsensitivity.tex}
+\clearpage
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Event selection}
+\label{sec:event_selection}
+\input{include/event_selection.tex}
+\clearpage
+%-------------------------------------------------------------------------------
+
 
 %-------------------------------------------------------------------------------
 \section{Analysis}
