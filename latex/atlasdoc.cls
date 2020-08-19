@@ -7,17 +7,19 @@
 % Note that this file can be overwritten when atlaslatex is updated.
 % if TeX Live 2014 is used and xpatch is needed, have to load mhchem first.
 %
-% Copyright (C) 2002-2018 CERN for the benefit of the ATLAS collaboration
+% Copyright (C) 2002-2020 CERN for the benefit of the ATLAS collaboration
 %-------------------------------------------------------------------------------
-\def\ATPackageVersion{07-05-01}
+\def\ATPackageVersion{09-00-03}
 
-\ProvidesClass{latex/atlasdoc}[2019/09/13 v.07-05-01 ATLAS document class]
-% Needs 2009 TeX Live or later
-\NeedsTeXFormat{LaTeX2e}[2009/01/01]
+\ProvidesClass{latex/atlasdoc}[2020/07/23 v.09-00-03 ATLAS document class]
+% Needs 2013 TeX Live or later
+\NeedsTeXFormat{LaTeX2e}[2013/01/01]
 
 %-------------------------------------------------------------------------------
 % More advanced if syntax
 \RequirePackage{ifthen}
+% More advanced command definition
+\RequirePackage{xparse}
 % Process options. Use kvoptions package.
 \RequirePackage{kvoptions}
 %\RequirePackage[debugshow]{kvoptions}
@@ -43,6 +45,8 @@
 \DeclareStringOption[normal]{titlesize}
 \DeclareStringOption[\subsectiontocdepth]{tocdepth}
 \DeclareBoolOption[true]{floatopt}
+\DeclareBoolOption[true]{mathlines}
+\DeclareBoolOption[true]{linenofix}
 \DeclareBoolOption[false]{texmf}
 \DeclareBoolOption[true]{newtx}
 \DeclareBoolOption[false]{txfonts}
@@ -50,6 +54,8 @@
 \DeclareBoolOption[false]{palatino}
 \DeclareBoolOption[false]{mhchem}
 \DeclareBoolOption[true]{abstract}
+\DeclareBoolOption[true]{atlaslogo}
+\DeclareBoolOption[true]{cernlogo}
 \DeclareBoolOption[true]{datetop}
 \DeclareBoolOption[false]{showframe}
 \DeclareStringOption[0pt]{titleextraheight}
@@ -178,15 +184,28 @@
   \newcommand*{\ADOC@abstractsize}{\normalsize}
 }
 
+% ATLAS draft heading text
+\def\ADOC@draftheading{ATLAS DRAFT}
+\newcommand*{\AtlasDraftHeading}[1]{\def\ADOC@draftheading{#1}}
+
+% Set up command for authors and ORCID
+\NewDocumentCommand \AtlasOrcid { o m } {%
+  \IfNoValueTF {#1} {%
+    #2%
+  }{%
+    \href{https://orcid.org/#1}{#2}%
+  }%
+}
+
 % Switch to txfonts for TeX Live <= 2012
 % Need to pass this option to atlaspackage as well
-\ifthenelse{\ADOC@texlive < 2012 \AND \boolean{ADOC@newtx}}{%
-  \typeout{*** atlasdoc: use txfonts instead of newtx}
-  \ADOC@newtxfalse
-  \ADOC@txfontstrue
-  \PassOptionsToPackage{txfonts}{\ATLASLATEXPATH atlaspackage}
-}{%
-}
+% \ifthenelse{\ADOC@texlive < 2012 \AND \boolean{ADOC@newtx}}{%
+%   \typeout{*** atlasdoc: use txfonts instead of newtx}
+%   \ADOC@newtxfalse
+%   \ADOC@txfontstrue
+%   \PassOptionsToPackage{txfonts}{\ATLASLATEXPATH atlaspackage}
+% }{%
+% }
 
 %-------------------------------------------------------------------------------
 % Defaults for title page
@@ -334,7 +353,7 @@
 
 % Required packages
 \RequirePackage{graphicx}
-\RequirePackage{xcolor}
+\RequirePackage[svgnames]{xcolor}
 \RequirePackage{babel}
 
 % Turn on bold math when using \bfseries
@@ -355,11 +374,12 @@
   % Paragraph spacing is half a line
   \KOMAoptions{parskip=half}
   \addtokomafont{disposition}{\rmfamily}
-  \ifthenelse{\ADOC@texlive < 2013}{%
-    \relax
-  }{%
-    \addtokomafont{author}{\ADOC@authorsize}
-  }
+  % Set font size for author. URLs in authors (such as orcid) will be black.
+  % \ifthenelse{\ADOC@texlive < 2013}{%
+  %   \relax
+  % }{%
+    \addtokomafont{author}{\ADOC@authorsize\hypersetup{urlcolor=black}}
+  % }
   \addtokomafont{part}{\LARGE}
   \addtokomafont{descriptionlabel}{\rmfamily}
   %\setkomafont{pageheadfoot}{\normalsize\sffamily}
@@ -435,14 +455,14 @@
       \RequirePackage[T1]{fontenc}
     \else
       \typeout{atlasdoc: using newtx fonts package}
-      \ifthenelse{\ADOC@texlive < 2013}{%
-        \RequirePackage{newtxtext}
-        \typeout{*** atlasdoc: include amsmath before newtxmath}
-        \RequirePackage{amsmath}
-      }{%
+      % \ifthenelse{\ADOC@texlive < 2013}{%
+      %   \RequirePackage{newtxtext}
+      %   \typeout{*** atlasdoc: include amsmath before newtxmath}
+      %   \RequirePackage{amsmath}
+      % }{%
       % \RequirePackage[defaultsups]{newtxtext}
         \RequirePackage{newtxtext}
-      }
+      % }
       \RequirePackage{newtxmath}
     \fi
   \fi
@@ -462,16 +482,42 @@
   \setcounter{totalnumber}{20}
 \fi
 
-% Make sure page sizes etc are calculaetd after font selection
+% Make sure page sizes etc are calculated after font selection
 \KOMAoptions{DIV=last}
 
 % Add ability to include line numbers
-\RequirePackage{lineno}
+\ifADOC@mathlines
+  \RequirePackage[mathlines]{lineno}
+\else
+  \RequirePackage{lineno}
+\fi
 % If you have an old lineno or do not have it, you can get it from the latex/other directory
 % \RequirePackage{latex/other/lineno}
 % \nolinenumbers
+
+% Show frame for checking dimensions etc.
 \ifADOC@showframe
   \RequirePackage{showframe}
+\fi
+
+% Try to avoid adding linenomath around unknown environments
+% Code adapted from https://tex.stackexchange.com/questions/436011/linenomath-printing-extra-numbers-on-last-line-of-multline-align-flalign-envir
+\ifADOC@linenofix
+  \RequirePackage{xpatch}
+  \newcommand*\linenomathpatchAMS[1]{%
+    \expandafter\xpretocmd\csname #1\endcsname {\linenomathAMS}{}{}%
+    \expandafter\xpretocmd\csname #1*\endcsname{\linenomathAMS}{}{}%
+    \expandafter\xapptocmd\csname end#1\endcsname {\endlinenomath}{}{}%
+    \expandafter\xapptocmd\csname end#1*\endcsname{\endlinenomath}{}{}%
+  }
+  \expandafter\ifx\linenomath\linenomathWithnumbers
+    \typeout{atlasdoc: add line numbers to equations}
+    \let\linenomathAMS\linenomathWithnumbers
+    \xpatchcmd\linenomathAMS{\advance\postdisplaypenalty\linenopenalty}{}{\typeout{atlasdoc xpatch: Extra linenumber patch worked}}{\typeout{*** atlasdoc xpatch: Extra linenumber patch failed}}
+  \else
+    \typeout{atlasdoc: do not add line numbers to equations}
+    \let\linenomathAMS\linenomathNonumbers
+  \fi
 \fi
 
 % Compute the time in hours and minutes; make new variables \timehh and \timemm
@@ -485,14 +531,14 @@
 % \RequirePackage{scrdate,scrtime}
 
 % Draft heading/footer code
-\newcommand{\AtlasDraftHeading}{%
+\newcommand{\ADOC@DraftHeading}{%
   \ifthenelse{\ADOC@texlive < 2015}{%
     \RequirePackage[headsepline]{scrpage2}
   }{%
     \RequirePackage[headsepline]{scrlayer-scrpage}
   }
   \ihead{}
-  \chead[]{\fbox{\textsf\bfseries ATLAS DRAFT}}
+  \chead[]{\fbox{\normalfont\ADOC@draftheading}}
   \ohead{}
   \ifoot{\dateandtime}
   \cfoot{}
@@ -512,22 +558,22 @@
 \fi
 
 % BOOK, i.e. book heading/footer code
-\newcommand{\AtlasBookHeading}{%
-  \ifthenelse{\ADOC@texlive < 2015}{%
-    \RequirePackage[headsepline]{scrpage2}
-  }{%
-    \RequirePackage[headsepline]{scrlayer-scrpage}
-  }
-  \ifADOC@atlasdraft
-    \ifx\ADOC@draftversion\@empty%
-      \relax
-    \else
-      \ihead{ATLAS DRAFT}
-      \ifoot{\dateandtime}
-    \fi
-  \fi
-  \pagestyle{scrheadings}
-}
+% \newcommand{\AtlasBookHeading}{%
+%   \ifthenelse{\ADOC@texlive < 2015}{%
+%     \RequirePackage[headsepline]{scrpage2}
+%   }{%
+%     \RequirePackage[headsepline]{scrlayer-scrpage}
+%   }
+%   \ifADOC@atlasdraft
+%     \ifx\ADOC@draftversion\@empty%
+%       \relax
+%     \else
+%       \ihead{\ADOC@draftheading}
+%       \ifoot{\dateandtime}
+%     \fi
+%   \fi
+%   \pagestyle{scrheadings}
+% }
 
 % Pass comment option to atlascomment.sty
 \ifADOC@LANGEDIT
@@ -560,7 +606,11 @@
   % \typeout{ATLAS title titlepageparbox is \the\titlepageparbox, text width \the\textwidth, line width \the\linewidth}%
   \parbox[t][35mm]{\titlepageparbox}{%
     \parbox[b][35mm][t]{0.23\linewidth}{%
-      \includegraphics[height=25mm]{AT_atlaslogo_2015}\par
+      \ifADOC@atlaslogo
+        \includegraphics[height=25mm]{AT_atlaslogo_2015}\par
+      \else
+        \rule{0pt}{25mm}\par
+      \fi
       \sffamily\mdseries\fontsize{11}{13.2}\selectfont
       \ifx\ADOC@journal\@empty
         \relax
@@ -573,8 +623,10 @@
       \centering
         {\sffamily\bfseries\fontsize{20}{24}\selectfont
          \ifx\ADOC@docheading\@empty
-           \textsf{\ADOC@docheadingdefault}\par
+          \typeout{atlasdoc: using default heading}
+          \textsf{\ADOC@docheadingdefault}\par
          \else
+           \typeout{atlasdoc: using special heading: \ADOC@docheading}
            \textsf{\ADOC@docheading}\par
          \fi
         }
@@ -602,7 +654,12 @@
     }%
     \hspace*{\fill}%
     \parbox[b][35mm][t]{0.23\linewidth}{%
-      \hspace*{\fill}\includegraphics[height=25mm]{AT_cernlogo}\par
+      \hspace*{\fill}
+      \ifADOC@cernlogo%
+        \includegraphics[height=25mm]{AT_cernlogo}\par
+      \else
+        \rule{0pt}{25mm}\par
+      \fi
       \ifADOC@atlasdraft
         \ifx\ADOC@draftversion\@empty
           \relax
@@ -627,7 +684,11 @@
     }\par
     \vspace*{2mm}%
     \parbox[t]{0.45\linewidth}{%
-      \includegraphics[height=25mm]{AT_atlaslogo_2015}\par
+      \ifADOC@atlaslogo%
+        \includegraphics[height=25mm]{AT_atlaslogo_2015}\par
+      \else
+        \rule{0pt}{25mm}\par
+      \fi
       \sffamily\mdseries\fontsize{11}{13.2}\selectfont
       \ifx\ADOC@journalref\@empty
         \ifx\ADOC@journal\@empty
@@ -646,7 +707,12 @@
     }%
     \hspace*{\fill}%
     \parbox[t]{0.45\linewidth}{%
-      \hspace*{\fill}\includegraphics[height=25mm]{AT_cernlogo}\par
+      \hspace*{\fill}
+      \ifADOC@cernlogo%
+        \includegraphics[height=25mm]{AT_cernlogo}\par
+      \else
+        \rule{0pt}{25mm}\par
+      \fi
       \sffamily\mdseries\fontsize{11}{13.2}\selectfont
       \hspace*{\fill}\ADOC@preprintnumber\par
       \hspace*{\fill}\ADOC@atlasdate\par
@@ -704,8 +770,13 @@
   % \parbox[b]{\titlepageparbox}{%
   {%
     \rmfamily\mdseries\fontsize{10}{12}\selectfont
-    \copyright\ \the\year \ CERN for the benefit of the ATLAS Collaboration.\newline
-    Reproduction of this article or parts of it is allowed as specified in the CC-BY-4.0 license.
+    \ifADOC@atlaslogo%
+      \copyright\ \the\year \ CERN for the benefit of the ATLAS Collaboration.\newline
+      Reproduction of this article or parts of it is allowed as specified in the CC-BY-4.0 license.
+    \else
+      \copyright\ \the\year \ CERN\newline
+      Reproduction of this article or parts of it is allowed as specified in the CC-BY-4.0 license.
+    \fi
   }
 }
 
@@ -889,7 +960,7 @@
       \typeout{*** atlasdoc: this ATLAS draft document does not have a version number}
     \else
       \typeout{atlasdoc: this is an ATLAS draft document}
-      \AtlasDraftHeading
+      \ADOC@DraftHeading
       \linenumbers
       % \@ifpackageloaded{biblatex}{%
       %   % backref=true adds page numbers of citations to bibliography
@@ -899,6 +970,15 @@
     \fi
   \else
     \typeout{atlasdoc: this is the final version of an ATLAS document}
+  \fi
+  \ifADOC@linenofix
+    \typeout{+++ atlasdoc: using lineno package fix}
+    \linenomathpatchAMS{align}
+    \linenomathpatchAMS{alignat}
+    \linenomathpatchAMS{equation}
+    \linenomathpatchAMS{flalign}
+    \linenomathpatchAMS{gather}
+    \linenomathpatchAMS{multline}
   \fi
   % \typeout{atlasdoc sizes:}
   % \typeout{paper height and width \the\paperheight, \the\paperwidth}

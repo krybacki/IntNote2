@@ -7,9 +7,9 @@
 %
 % Note that this file can be overwritten when atlaslatex is updated.
 %
-% Copyright (C) 2002-2018 CERN for the benefit of the ATLAS collaboration
+% Copyright (C) 2002-2020 CERN for the benefit of the ATLAS collaboration
 %-------------------------------------------------------------------------------
-\ProvidesPackage{latex/atlasbiblatex}[2019/09/13 v.07-05-01 ATLAS biblatex style]
+\ProvidesPackage{latex/atlasbiblatex}[2020/07/23 v.09-00-03 ATLAS biblatex style]
 \NeedsTeXFormat{LaTeX2e}
 
 %-------------------------------------------------------------------------------
@@ -168,11 +168,11 @@
   \fi
 
   % Print only first page - only works for TeX Live 2012 onwards I think
-  \ifthenelse{\ABIB@texlive < 2012}{%
-    \relax
-  }{%
+  % \ifthenelse{\ABIB@texlive < 2012}{%
+  %   \relax
+  % }{%
     \DeclareFieldFormat{pages}{\mkfirstpage[{\mkpageprefix[bookpagination]}]{#1}}
-  }
+  % }
 
   % Change punctuation to comma
   \renewcommand*{\newunitpunct}{\addcomma\space}
