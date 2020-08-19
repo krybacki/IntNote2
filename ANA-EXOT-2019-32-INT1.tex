@@ -9,7 +9,7 @@
 % Use this variant if the files are in a central location, e.g. $HOME/texmf.
 % \newcommand*{\ATLASLATEXPATH}{}
 %-------------------------------------------------------------------------------
-\documentclass[NOTE, atlasdraft=true, texlive=2020, UKenglish]{\ATLASLATEXPATH atlasdoc}
+\documentclass[NOTE, atlasdraft=true, texlive=2016, UKenglish]{\ATLASLATEXPATH atlasdoc}
 % The language of the document must be set: usually UKenglish or USenglish.
 % british and american also work!
 % Commonly used options:
@@ -40,6 +40,8 @@
 \usepackage{multirow}
 \usepackage{pdflscape}
 \usepackage{rotating}
+\usepackage{todonotes} % Add '[disable]' option to mask them
+
 %-------------------------------------------------------------------------------
 % Style file with biblatex options for ATLAS documents.
 \usepackage{\ATLASLATEXPATH atlasbiblatex}
@@ -105,6 +107,12 @@
 \clearpage
 %-------------------------------------------------------------------------------
 
+\section{Event selection}
+\label{sec:event_selection}
+\input{include/event_selection.tex}
+\clearpage
+
+
 %-------------------------------------------------------------------------------
 \section{``Quark-Gluon'' Sample Selection}
 \label{sec:QGselection}
@@ -120,10 +128,6 @@
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
-\section{Event selection}
-\label{sec:event_selection}
-\input{include/event_selection.tex}
-\clearpage
 %-------------------------------------------------------------------------------
 
 

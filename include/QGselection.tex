@@ -1,24 +1,30 @@
 
-It has been shown that   the number of charged particles with transverse momentum (\pt ) above 500\,MeV, 
-\ntrk, associated with a jet can be used to select samples which have an increased fraction of 
-jets produced by quarks (or gluons). Samples with enhanced fractions of quark or gluon initiated jets can be created by 
-using a selection based on the \ntrk\ as shown in Fig.~\ref{fig:jet_pt_quark_gluon}. Ref.~\cite{ATL-PHYS-PUB-2017-009} 
-also shows that the \Pythia~8 generator~\cite{pythia8} using the A14 tune~\cite{A14tune} is in a good agreement with 
-the distributions found in data.
+It has been shown that the number of charged particles with transverse
+momentum (\pT ) above 500\,MeV, \ntrk, associated with a jet can be used
+to select samples which have an increased fraction of jets produced by
+quarks (or gluons). Samples with enhanced fractions of quark or gluon
+initiated jets can be created by using a selection based on the \ntrk\
+as shown in Fig.~\ref{fig:jet_pt_quark_gluon}.
+Ref.~\cite{ATL-PHYS-PUB-2017-009} also shows that the \Pythia8
+generator~\cite{pythia8} using the A14 tune~\cite{A14tune} is in a good
+agreement with the distributions found in data.
 
 
 \begin{figure}[htb]
  \centering
 \includegraphics[width=0.75\textwidth]{figures/tagging/fig_01_ATL-PHYS-PUB-2017-009.pdf}
-\caption{Distribution of the jet reconstructed track multiplicity (\ntrk ) in different pT ranges with the 
-\Pythia~8 generator~\cite{pythia8} using the A14 tune~\cite{A14tune}, the NNPDF2.3 PDF set~\cite{Carrazza:2013axa}, 
-and processes with a full simulation of the ATLAS detector. Jets must be fully within the tracking acceptance 
-($|\eta|<2.1$) and tracks are required to have $\pt > 500$\,MeV and pass  quality criteria described in 
-Ref.~\cite{ATL-PHYS-PUB-2017-009}. Figure from Ref.~\cite{ATL-PHYS-PUB-2017-009}. \label{fig:jet_pt_quark_gluon}}
+\caption{Distribution of the jet reconstructed track multiplicity (\ntrk ) in
+ different pT ranges with the \Pythia~8 generator~\cite{pythia8} using
+ the A14 tune~\cite{A14tune}, the NNPDF2.3 PDF
+ set~\cite{Carrazza:2013axa}, and processes with a full simulation of the
+ ATLAS detector. Jets must be fully within the tracking acceptance
+ ($|\eta|<2.1$) and tracks are required to have $\pT > 500$\,MeV and pass
+  quality criteria described in Ref.~\cite{ATL-PHYS-PUB-2017-009}. Figure
+ from Ref.~\cite{ATL-PHYS-PUB-2017-009}. \label{fig:jet_pt_quark_gluon}}
 \end{figure}
 
 In Ref.~\cite{ATL-PHYS-PUB-2017-009}  the selection criteria for  an enriched quark-initiated jet sample was chosen so that 
-each \pt\ bin had 60\% quark-initiated purity. Applying this criteria to the high mass dijet sample would lead to 
+each \pT\ bin had 60\% quark-initiated purity. Applying this criteria to the high mass dijet sample would lead to 
 discontinuities in the mass spectrum that would present difficulties to a resonance search. Two alternative selection
 criteria have been investigated, one based on that used in Ref.~\cite{ATL-PHYS-PUB-2017-009} and a simple linear
 alternative. A jet is classed as being quark-initiated if \ntrk is less than the threshold \nqg\ (Eq.~\ref{eq:QGselect}):
@@ -30,20 +36,22 @@ alternative. A jet is classed as being quark-initiated if \ntrk is less than the
 
 The implementation of the selection criteria used in Ref.~\cite{ATL-PHYS-PUB-2017-009} used here sets \nqg\ to 
 \begin{equation}
-\nqg = \mathrm{int} \left[ \frac{65}{1 + \exp\left[-0.003 (\pt - 1500) \right]} +7 \right]  \label{eq:nqg1} 
+\nqg = \mathrm{int} \left[ \frac{65}{1 + \exp\left[-0.003 (\pT - 1500) \right]} +7 \right]  \label{eq:nqg1} 
 \end{equation}
-where the \pt\ is measured in GeV and int truncates the value to a integer. The alternative selection criteria uses a linear function of the \pt 
+where the \pT\ is measured in GeV and int truncates the value to an integer. The alternative selection criteria uses a linear function of the \pT
 \begin{equation}
-\nqg = \mathrm{int} \left[ 0.02 \pt \right].  \label{eq:nqg2} 
+\nqg = {m \ln(\pT) + c}  \label{eq:nqg2}
 \end{equation}
-These selection criteria are applied to the two leading jets to separate dijet events into three samples: 
-where both jets are more likely to be quark-initiated, \QQ,  where both jets are more likely to 
-be gluon-initiated, \GG, and where we have one of each, \QG. 
-Simulated background events are separated into sub-samples based on the selection criteria given in 
+where m and c are constants chosen to provide suitable subsamples.
+These selection criteria are applied to the two leading jets to separate dijet events into three samples:
+where both jets are more likely to be quark-initiated, \QQ,  where both jets are more likely to
+be gluon-initiated, \GG, and where we have one of each, \QG.
+Simulated background events are separated into sub-samples based on the selection criteria given in
 Eqs.~\ref{eq:nqg1} and \ref{eq:nqg2} and are shown in Fig.~\ref{fig:pythia_qg_selection}. It is clear that
-the selection using Eq.~\ref{eq:nqg1} (Fig.~\ref{fig:pythia_qg_selection} a) produces more complex background shapes 
+the selection using Eq.~\ref{eq:nqg1} (Fig.~\ref{fig:pythia_qg_selection} a) produces more complex background shapes
 than those Eq.~\ref{eq:nqg2} (Fig.~\ref{fig:pythia_qg_selection} b). Since the selection using  Eq.~\ref{eq:nqg2} will
-be much easier to fit it will be used for initial toy-MC studies of limit setting.
+be much easier to fit it will be used for initial toy-MC studies of limit setting. Alternative selections using Eq.~\ref{eq:nqg2} are produced for comparison, "selection 1" with m = 0.02, c = 0, and "selection 4" with m = 0.01, c = 15.
+
 
 \begin{figure}[htb]
  \centering
