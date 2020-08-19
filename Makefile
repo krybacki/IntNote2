@@ -21,7 +21,7 @@
 
 #-------------------------------------------------------------------------------
 # Check which TeX Live installation you have with the command pdflatex --version
-TEXLIVE  = 2016
+TEXLIVE  = 2020
 LATEX    = latex
 PDFLATEX = pdflatex
 # BIBTEX   = bibtex
