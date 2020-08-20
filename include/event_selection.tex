@@ -1,12 +1,16 @@
-A common, baseline selection is applied for the resonant  analyses of the Run~2 data that is taken directly from ~\cite{Nishu:2646455}, as described in Section~\ref{sec:base_selection}. 
+A common, baseline selection is applied for the resonant  analyses of
+the Run~2 data that is taken directly from ~\cite{Nishu:2646455}, as
+described in Section~\ref{sec:base_selection}. 
 
 %Then, specific cuts applied
 %for the resonant analysis, tailored to improve the sensitivity, are described in Sections~\ref{sec:res_selection}. 
 
 \subsection{Observables and Kinematic Variables}
 \label{sec:observables}
-In the Standard Model (SM), the main and predominant source of dijet events is two-to-two scattering in QCD processes.
-The search exploits two key properties of the background to enhance its sensitivity to new physics signals:
+In the Standard Model (SM), the main and predominant source of dijet
+events is two-to-two scattering in QCD processes. The search exploits
+two key properties of the background to enhance its sensitivity to new
+physics signals:
 
 \begin{itemize}
 	\item The background at high $m_{jj}$ is a smooth and continuously falling spectrum.
@@ -15,21 +19,33 @@ direction, due to Rutherford $t$- and $u$-channel poles in the cross sections
 for many individual scattering diagrams \cite{Harris:2011bh}.
 \end{itemize}
 
-Many of the possible signals for the dijet search would appear as a resonance peak in \mjj, the invariant mass of the dijet system formed from the two highest-\pT\ jets.
-Resonant signals have $\cos{\theta}$ distributions which, in contrast to Rutherford scattering,
-are either isotropic or follow some polynomial in $\cos{\theta}$\footnote{See Ref.~\cite{Harris:2011bh} p15 for a summary.},
-giving them a distinct angular distribution from QCD processes. For this reason,
-the \mjj\ search selects events with small angle separation via an upper limit on
+Many of the possible signals for the dijet search would appear as a
+resonance peak in \mjj, the invariant mass of the dijet system formed
+from the two highest-\pT\ jets. Resonant signals have $\cos{\theta}$
+distributions which, in contrast to Rutherford scattering, are either
+isotropic or follow some polynomial in $\cos{\theta}$\footnote{See
+Ref.~\cite{Harris:2011bh} p15 for a summary.}, giving them a distinct
+angular distribution from QCD processes. For this reason, the \mjj\
+search selects events with small angle separation via an upper limit on
 \begin{itemize}
 	\item \ystar = $(y_1-y_2)/2$
 \end{itemize}
-to enhance sensitivity to higher energies and enable probing the scale of new
-phenomena. Where $y_{1,2}$ is the rapidity of the leading and sub-leading jet.
-The value of the \ystar\ cut is optimized to reject $t$-channel QCD while admitting the other types of signals.
+to enhance sensitivity to higher energies and enable probing the scale
+of new phenomena. Where $y_{1,2}$ is the rapidity of the leading and
+sub-leading jet. The value of the \ystar\ cut is optimized to reject
+$t$-channel QCD while admitting the other types of signals.
 
 \subsection{Jet Reconstruction and Calibration}
-Jets are reconstructed with the \akt algorithm \cite{Cacciari:2008gp} with a distance parameter of 0.4, as implemented in the \textsc{FastJet} package~\cite{Cacciari:2011ma}.
-For these studies, we use jets reconstructed from topological clusters using the procedures described in \cite{ATLAS-CONF-2015-002}. For jet cleaning, the standard \textit{Loose} jet quality cuts are used as discussed in \cite{ATLAS-CONF-2015-029}. An event-based jet cleaning is applied to reject any event with a leading or sub-leading jet flagged as \textit{Bad} for the \textit{Loose} criteria.  The jet criteria used is summarized in Table~\ref{tab:jetCalibration}.
+Jets are reconstructed with the \akt algorithm \cite{Cacciari:2008gp}
+with a distance parameter of 0.4, as implemented in the \textsc{FastJet}
+package~\cite{Cacciari:2011ma}. For these studies, we use jets
+reconstructed from topological clusters using the procedures described
+in \cite{ATLAS-CONF-2015-002}. For jet cleaning, the standard
+\textit{Loose} jet quality cuts are used as discussed in
+\cite{ATLAS-CONF-2015-029}. An event-based jet cleaning is applied to
+reject any event with a leading or sub-leading jet flagged as
+\textit{Bad} for the \textit{Loose} criteria.  The jet criteria used is
+summarized in Table~\ref{tab:jetCalibration}.
 
 \begin{table}[ht]
 	\label{tab:jetCalibration}
@@ -71,21 +87,45 @@ For these studies, we use jets reconstructed from topological clusters using the
 
 
 \subsection{Trigger}
-The data used in this analysis are collected using the lowest unprescaled small-R single-jet trigger.  The naming convention of single-jet triggers follows either `Jnnn' for L1 triggers or `jnnn' for HLT trigger, where 'nnn' is a number specifying the nominal jet \pT threshold for the trigger in \GeV\.  The energy scale of the trigger threshold is the EM scale for L1 triggers, while a calibration sequence very close to what is applied to offline jets is applied to HLT jets, bringing their scale to the hadronic scale.\\
+The data used in this analysis are collected using the lowest
+unprescaled small-R single-jet trigger.  The naming convention of
+single-jet triggers follows either `Jnnn' for L1 triggers or `jnnn' for
+HLT trigger, where 'nnn' is a number specifying the nominal jet \pT
+threshold for the trigger in \GeV\.  The energy scale of the trigger
+threshold is the EM scale for L1 triggers, while a calibration sequence
+very close to what is applied to offline jets is applied to HLT jets,
+bringing their scale to the hadronic scale.\\
 
-The lowest single jet un-prescaled trigger in 2015 was HLT\_j360, in 2016 was
-HLT\_j380, in 2017 was HLT\_j420 (if we ignore one run with luminosity around
-2\,\ipb ) and in 2018 was also HLT\_j420. So to keep the selection consistent
-across years, the kinetic requirement derived for HLT\_j420 is used for the analysis. In addition to this, HLT\_j225\_gsc420\_boffperf\_split is also unprescaled for all data taking and also considered for the trigger studies for the analysis. \\
+The lowest single jet un-prescaled trigger in 2015 was HLT\_j360, in
+2016 was HLT\_j380, in 2017 was HLT\_j420 (if we ignore one run with
+luminosity around 2\,\ipb ) and in 2018 was also HLT\_j420. So to keep
+the selection consistent across years, the kinetic requirement derived
+for HLT\_j420 is used for the analysis. In addition to this,
+HLT\_j225\_gsc420\_boffperf\_split is also unprescaled for all data
+taking and also considered for the trigger studies for the analysis. \\
 
-For the complete \RunTwo dataset, the two single-jet unprescaled triggers for all data taking are: HLT\_j420 and HLT\_j225\_gsc420\_boffperf\_split as mentioned above, both of which are seeded from the L1\_J100 trigger. Both triggers search for jets with $\pT > 420 \GeV$, while the HLT\_j225\_gsc420\_boffperf\_split trigger also applies the offline global sequential calibration (GSC) to improve the trigger turn-on.\\
+For the complete \RunTwo dataset, the two single-jet unprescaled
+triggers for all data taking are: HLT\_j420 and
+HLT\_j225\_gsc420\_boffperf\_split as mentioned above, both of which are
+seeded from the L1\_J100 trigger. Both triggers search for jets with
+$\pT > 420 \GeV$, while the HLT\_j225\_gsc420\_boffperf\_split trigger
+also applies the offline global sequential calibration (GSC) to improve
+the trigger turn-on.\\
 
-The trigger turn-on was investigated in Ref.~\cite{Nishu:2646455} finding that  obtaining the turn-on directly from \mjj\ provides a much lower turn-on than from requiring a specific cut on the leading jet \pT. As such, the analysis does not require an explicit cut on the \pT\ of either the leading or subleading jet.
-In practice, the invariant mass cut imposes a soft cut of 420~\GeV on the leading jet, and 150~\GeV on the subleading jet. The two triggers are very similar in performance, and having one over another does not change our lower \mjj\ threshold from the binning.
+The trigger turn-on was investigated in Ref.~\cite{Nishu:2646455}
+finding that  obtaining the turn-on directly from \mjj\ provides a much
+lower turn-on than from requiring a specific cut on the leading jet \pT.
+As such, the analysis does not require an explicit cut on the \pT\ of
+either the leading or subleading jet. In practice, the invariant mass
+cut imposes a soft cut of 420~\GeV on the leading jet, and 150~\GeV on
+the subleading jet. The two triggers are very similar in performance,
+and having one over another does not change our lower \mjj\ threshold
+from the binning.
 
 
-In order not to sculpt the \mjj\ distribution in an odd way due to different
-triggers and given the assessment of the turn-on, the analysis uses the HLT\_j420 trigger with no cut on the leading jet \pT.
+In order not to sculpt the \mjj\ distribution in an odd way due to
+different triggers and given the assessment of the turn-on, the analysis
+uses the HLT\_j420 trigger with no cut on the leading jet \pT.
 
 \subsection{Baseline selection}
 \label{sec:base_selection}
@@ -111,7 +151,9 @@ the cuts applied are:
 \item All jets with $\pt>150~\GeV$ pass LooseBad cleaning cuts
 \end{itemize}
 
-Additional kinematic selection criteria are used for the resonance and angular search distributions separately to optimise the search potential.
+Additional kinematic selection criteria are used for the resonance and
+angular search distributions separately to optimise the search
+potential.
 
 
 The following cuts are also applied to the  resonance searches:
