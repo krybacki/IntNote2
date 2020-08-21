@@ -40,6 +40,9 @@
 \usepackage{multirow}
 \usepackage{pdflscape}
 \usepackage{rotating}
+\usepackage{todonotes} % Add '[disable]' option to mask them
+\usepackage{xcolor}
+
 %-------------------------------------------------------------------------------
 % Style file with biblatex options for ATLAS documents.
 \usepackage{\ATLASLATEXPATH atlasbiblatex}
@@ -105,6 +108,12 @@
 \clearpage
 %-------------------------------------------------------------------------------
 
+\section{Event selection}
+\label{sec:event_selection}
+\input{include/event_selection.tex}
+\clearpage
+
+
 %-------------------------------------------------------------------------------
 \section{``Quark-Gluon'' Sample Selection}
 \label{sec:QGselection}
@@ -112,37 +121,64 @@
 \clearpage
 %-------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------------
-\section{``Quark-Gluon'' Resonance Search Sensitivity}
-\label{sec:QGselection}
-\input{include/QGsensitivity.tex}
+\section{Background Estimation Strategy}
+%\label{sec:background_estimation}
+\input{include/04-BackgroundEstimation.tex}
 \clearpage
-%-------------------------------------------------------------------------------
 
-%-------------------------------------------------------------------------------
-\section{Event selection}
-\label{sec:event_selection}
-\input{include/event_selection.tex}
+
+
+
+\section{Search Strategy}
+%\label{sec:search_strategy}
+\input{include/06-SearchStrategy.tex}
 \clearpage
-%-------------------------------------------------------------------------------
+%
+% %-------------------------------------------------------------------------------
+% %%SYSTEMATICS
+%
+%\section{Systematic Uncertainties}
+%%\label{sec:systematic_uncertainties}
+%\input{texinclude/07-SystematicUncertainties.tex}
+%\clearpage
+%
+%
+% %-------------------------------------------------------------------------------
+% %%LIMIT SETTING PHASE
+%
+\section{Limit Setting Techniques}
+%\label{sec:limits}
+\input{include/08-LimitTechniques.tex}
+\clearpage
 
 
 %-------------------------------------------------------------------------------
-\section{Analysis}
-\label{sec:analysis}
+%\section{``Quark-Gluon'' Resonance Search Sensitivity}
+%\label{sec:QGselection}
+%\input{include/QGsensitivity.tex}
+%\clearpage
 %-------------------------------------------------------------------------------
 
-You can find some text snippets that can be used in papers in \texttt{template/atlas-snippets.tex}.
-Some of the snippets need the \texttt{jetetmiss} option passed to \texttt{atlasphysics}.
-%\input{atlas-snippets}
-
-
 %-------------------------------------------------------------------------------
-\section{Results}
-\label{sec:result}
 %-------------------------------------------------------------------------------
 
-Place your results here.
+
+%%-------------------------------------------------------------------------------
+%\section{Analysis}
+%\label{sec:analysis}
+%%-------------------------------------------------------------------------------
+%
+%You can find some text snippets that can be used in papers in \texttt{template/atlas-snippets.tex}.
+%Some of the snippets need the \texttt{jetetmiss} option passed to \texttt{atlasphysics}.
+%%\input{atlas-snippets}
+%
+%
+%%-------------------------------------------------------------------------------
+%\section{Results}
+%\label{sec:result}
+%%-------------------------------------------------------------------------------
+%
+%Place your results here.
 
 % All figures and tables should appear before the summary and conclusion.
 % The package placeins provides the macro \FloatBarrier to achieve this.
