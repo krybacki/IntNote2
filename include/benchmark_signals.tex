@@ -74,69 +74,41 @@ interpolation is not used but drawn to help guide the eye.
 
 \clearpage
 
-\subsubsection{Quantum Black Holes}
-\label{sec:QBH}
-The LHC should be able to produce QBH under the condition that the
-universe contains sufficiently large extra dimensions \cite{RandallMeade}.
-The quantum-gravity energy scale $M_{D}$ at which micro black holes are produced decreases as the number, $n$,
-of these large extra dimensions increases, allowing for lower mass scales at larger $n$.
-
-In the simplest situation, one would expect approximately isotropic decay of these micro black holes via Hawking
-radiation to a many-particle final state. This would require black holes (BH) to be produced substantially
-above their mass threshold in order to have energy for such a decay \cite{Feng:2004}. 
-However, gravitational interactions are also expected at the scale of the new interaction 
-(well below the actual thermal black hole production threshold), at which the dominant final state would be two-body ones.
-Production of these
-states is expected to begin once the $M_D$ energy threshold is reached. 
-This results in a resonance-like production of predominantly
-two-body final states, mainly jets, near $M_D$. The dijet analysis, then, is a way to search for such
-isotropic final states as probes of quantum gravitational effects.
-
-The \BlackMax~\cite{Dai:2007ki} MC generator is used to simulate quantum black holes events with $n=6$. The samples used in the analysis
-are listed in Table~\ref{tab:qbhSamps}. Cross sections and acceptances for the model are given in figures~\ref{fig:signal_xsec_blackmax} and~\ref{fig:acc_blackmax} respectively.
-
-\begin{figure}[!htb]
-  \centering
-  \subfigure[Cross section]{\label{fig:signal_xsec_blackmax} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_BlackMax_log}}
-  \subfigure[Acceptance]{  \label{fig:acc_blackmax}\includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_BlackMax}}
-  \caption{(a) Cross section and (b) acceptance for the 
-  \BlackMax\ model for 13~\TeV~center-of-mass energies using the full resonance
-  analysis selection (Section~\ref{sec:event_selection}).}
-
-\end{figure}
-
-
-\clearpage
-\subsubsection{\Wprime\ models}
-\label{sec:Wprime}
-
-Another benchmark of new resonant physics is the production of heavy charged gauge bosons, \Wprime{}, which
-has been sought in final states containing charged leptons and (separately) dijets (see for instance the recent~\cite{EXOT-2013-08}). 
-In the current analysis, dijet events are used to search for the decays of \Wprime\  to $q\bar{q}$.
-
-The \Wprime\  signal sample is generated with the \Pythia~8 event generator, the NNPDF 2.3 PDFset~\cite{Carrazza:2013axa}is used in this generation, 
-with the ATLAS mc15 A14 tune~\cite{A14tune}. The LO cross-section provided by \Pythia~8 
-is used. The decays of the \Wprime\ are restricted to  $q\bar{q}$, with all six quark flavors included. 
-The specific model used in this study assumes that the \Wprime\  has V-A SM couplings.
-
-The following mass points are generated: 1000 GeV, 1200 GeV, 1500 GeV, 1700 GeV, 2000 GeV, thereafter at every 500 GeV up to 6500 GeV. 
-All samples are fully simulated using Geant4.
-
-The acceptances shown in Figure~\ref{fig:wprimeacc}(b) for the \Wprime\ model
-drop towards higher masses due to the tremendous off-shell low-mass 
-tail as seen in Figure~\ref{fig:wprimeacc}(c).
-
-\begin{figure}[!htb]
-  \centering
-  \subfigure[Cross section]{   \label{fig:wprime_xsec} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_WPrime_log}}
-  \subfigure[Acceptance]{ \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_WPrime} }
-  \subfigure[Truth Mass]{ \includegraphics[width=0.55\textwidth]{figures/benchmark_signals/Wprime/mWp_normalized.pdf} }
-  \caption{(a) Cross section and (b) acceptance for the \Wprime\ model for 13~\TeV~center-of-mass energies using the full resonance
-  analysis selection. The decrease in the acceptance at high mass is due to the considerable low mass tail of the signal, for which the shape at different mass points is shown in (c). The low-mass points acceptance is reduced by the selection cut on \mjj.
-  \label{fig:wprimeacc}}
-\end{figure}
-
-\clearpage
+%\subsubsection{Quantum Black Holes}
+%\label{sec:QBH}
+%\todo{Do QBH decay to quarks or gluons, is there increased sensitivity or not} 
+%The LHC should be able to produce QBH under the condition that the
+%universe contains sufficiently large extra dimensions \cite{RandallMeade}.
+%The quantum-gravity energy scale $M_{D}$ at which micro black holes are produced decreases as the number, $n$,
+%of these large extra dimensions increases, allowing for lower mass scales at larger $n$.
+%
+%In the simplest situation, one would expect approximately isotropic decay of these micro black holes via Hawking
+%radiation to a many-particle final state. This would require black holes (BH) to be produced substantially
+%above their mass threshold in order to have energy for such a decay \cite{Feng:2004}. 
+%However, gravitational interactions are also expected at the scale of the new interaction 
+%(well below the actual thermal black hole production threshold), at which the dominant final state would be two-body ones.
+%Production of these
+%states is expected to begin once the $M_D$ energy threshold is reached. 
+%This results in a resonance-like production of predominantly
+%two-body final states, mainly jets, near $M_D$. The dijet analysis, then, is a way to search for such
+%isotropic final states as probes of quantum gravitational effects.
+%
+%The \BlackMax~\cite{Dai:2007ki} MC generator is used to simulate quantum black holes events with $n=6$. The samples used in the analysis
+%are listed in Table~\ref{tab:qbhSamps}. Cross sections and acceptances for the model are given in figures~\ref{fig:signal_xsec_blackmax} and~\ref{fig:acc_blackmax} respectively.
+%
+%\begin{figure}[!htb]
+%  \centering
+%  \subfigure[Cross section]{\label{fig:signal_xsec_blackmax} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_BlackMax_log}}
+%  \subfigure[Acceptance]{  \label{fig:acc_blackmax}\includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_BlackMax}}
+%  \caption{(a) Cross section and (b) acceptance for the 
+%  \BlackMax\ model for 13~\TeV~center-of-mass energies using the full resonance
+%  analysis selection (Section~\ref{sec:event_selection}).}
+%
+%\end{figure}
+%
+%
+%
+%\clearpage
 
 \subsubsection{\Zprime\ models}
 \label{sec:Zprime}
