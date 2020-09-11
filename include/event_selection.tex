@@ -153,24 +153,27 @@ Additional kinematic selection criteria are used for the resonance to optimise t
 
 The following cuts are applied to the H$^\prime$ search.
 \begin{itemize}
-\item $|\Delta\phi| > 1.06$
+\item $|\Delta\phi| > 1.0$
 \item $|\ystar| < 0.6$
 \item $\mjj > 1100~\GeV$
 \end{itemize}
 
-The following cuts are applied to the string resonace search search.
+The following cuts are applied to the string resonace search.
 \begin{itemize}
 \item $|\ystar| < 0.8$
 \item $\mjj > 1717~\GeV$
 \end{itemize}
 
 The above cuts define the inclusive samples.
-The following additonal cuts are additional for quark-gluon tagging.
+The following additonal cuts are for quark-gluon tagging.
 \begin{itemize}
 \item $|\eta| < 0.21$ (both jets)
-\item $\ge 1$ gluon tagged
-\item 1 gluons tagged
+\item $\ge 1$ gluon tagged (75\% working point)
+\item 2 gluons tagged (75\% working point)
 \end{itemize}
+
+\noindent
+where the 75\% gluon selecton criteria is $n{500} > -7.26742 + 4.16218\ln(\pt)$.
 
 \subsection{Basic kinematic plots}
 \label{sec:kinematic_distributions}
@@ -417,8 +420,6 @@ The following additonal cuts are additional for quark-gluon tagging.
 \subsection{Analysis cutflow}
 %\label{sec:data_cutflow}
 
-\todo{Remove jet cuts and redo percentages} 
-\todo{Add $\Delta\phi$ and $\eta$ cuts. Change order of $\mjj$ and $|\ystar|$ cuts. Probably need table for $|\ystar| < 0.8$ cut.}
 This section and the next present the analysis cutflows. Cutflows obtained on
 Run-2 data are presented in Tables~\ref{tab:cutFlow_resonance_run2} and 
 \ref{tab:cutFlow_wstar_run2}.
@@ -433,14 +434,14 @@ Run-2 data are presented in Tables~\ref{tab:cutFlow_resonance_run2} and
 		Apply GRL 	& 	4442605390        & 	-6.24	 \\
 		Cleaning	 & 	4379077017	 & 	-1.43	 \\
 		HLT j420	 & 	266104885	 & 	-93.9	 \\
-		jet pre-selection	 &     261529193        &      -1.72    \\
-		$jet_{pt}^{lead}>420~\GeV$ &   243625312	 & -6.84 \\
-		$\mjj>1100~\GeV$	 & 	112911081	 & 	-53.65	 \\
-		$|\ystar| < 0.6$	 & 	28618618	 & 	-74.65	 \\
+		jet pre-selection	 &     259157844         &      -2.61    \\
+		$|\Delta\phi| > 1.0$	 & 		 & 		 \\
+		$|\ystar| < 0.6$	 & 		 & 		 \\
+		$\mjj>1100~\GeV$	 & 		 & 		 \\
 		\hline\hline
 	\end{tabular}
 	\caption{Cutflow for
-		events with resonance cuts:  $m_{jj}>1100~\GeV$, and $|\ystar|<0.6$. .
+		events with H$^\prime$ cuts:  $m_{jj}>1100~\GeV$, and $|\ystar|<0.6$. .
 		\label{tab:cutFlow_resonance_run2} }
 \end{table}
 
@@ -454,14 +455,14 @@ Run-2 data are presented in Tables~\ref{tab:cutFlow_resonance_run2} and
 		Apply GRL 	& 	4442605390        & 	-6.24	 \\
 		Cleaning	 & 	4379077017	 & 	-1.43	 \\
 		HLT j420	 & 	266104885	 & 	-93.9	 \\
-		jet pre-selection	 &     261529193        &      -1.72    \\
-		$jet_{pt}^{lead}>420~\GeV$ &   243625312	 & -6.84 \\
-		$\mjj>1717~\GeV$	 & 	28110220	 & 	-88.46	 \\
-		$|\ystar| < 1.2$	 & 	10161873	 & 	-63.84	 \\
+		jet pre-selection	 &     259157844        &      -2.61    \\
+		$|\Delta\phi| > 1.0$	 & 		 & 		 \\
+		$|\ystar| < 0.8$	 & 		 & 	 \\
+		$\mjj>1133~\GeV$	 & 		 & 	 \\
 		\hline\hline
 	\end{tabular}
 	\caption{Cutflow for
-		events with \Wstar resonance cuts:  $\mjj>1717~\GeV$, and $|\ystar|<1.2$. .
+		events with string resonance cuts:  $\mjj>1133~\GeV$, and $|\ystar|<0.8$. .
 		\label{tab:cutFlow_wstar_run2} }
 \end{table}
 
