@@ -141,43 +141,36 @@ the cuts applied are:
 	\end{itemize}
 \item LAr: Liquid Argon Calorimeter error rejected ( errorState(xAOD::EventInfo::LAr) )
 \item Tile: Tile Calorimeter error rejected ( errorState(xAOD::EventInfo::Tile) )
-\item LAr: Liquid Argon Calorimeter error rejected ( errorState(xAOD::EventInfo::LAr) )
-\item Tile: Tile Calorimeter error rejected ( errorState(xAOD::EventInfo::Tile) )
-\item Tile: Tile Calorimeter error rejected ( errorState(xAOD::EventInfo::Tile) )
 \item SCT: SCT single event upsets rejected ( errorState(xAOD::EventInfo::SCT) )
 \item Core: Incomplete event build rejected ( isEventFlagBitSet(xAOD::EventInfo::Core, 18) )
+\item All jets with $\pt\ge 150~\GeV$ pass LooseBad cleaning cuts
 \item Primary Vertex: the highest $\sum\pt^{2}(trk)$ (xAOD::VxType::VertexType::PriVtx) vertex has at least two tracks associated with it
 \item Trigger: Passes the lowest unprescaled single-jet trigger, HLT\_j420
-\item All jets with $\pt>150~\GeV$ pass LooseBad cleaning cuts
+\item Jet preselecton: Leading jet $\pt\ge 380~\GeV$ and Jet multiplicity $\ge 2$
 \end{itemize}
 
-Additional kinematic selection criteria are used for the resonance and
-angular search distributions separately to optimise the search
-potential and ensure good tracking efficiency.
+Additional kinematic selection criteria are used for the resonance to optimise the search potential and ensure good tracking efficiency. 
 
-
-The following cuts are also applied to the quark-gluon tagged resonance searches:\todo{This order might change.}
+The following cuts are applied to the H$^\prime$ search.
 \begin{itemize}
+\item $|\Delta\phi| > 1.06$
 \item $|\ystar| < 0.6$
-\item \todo{redo as cut in \yB.} $| \eta | < 2.1$
 \item $\mjj > 1100~\GeV$
 \end{itemize}
 
-Given its different decay topology, for the search of String signal slightly different cuts are applied:\todo{This has not yet been decided. A smaller $\ystar$ cut might be better.}
+The following cuts are applied to the string resonace search search.
 \begin{itemize}
-\item $|\ystar| < 1.2$
+\item $|\ystar| < 0.8$
 \item $\mjj > 1717~\GeV$
 \end{itemize}
 
-
-%Give its different decay topology, for the search of W* signal slightly different cuts are applied, 
-%motivated in ~\ref{sec:Wstar_CutOptimisation}:
-%\begin{itemize}
-%\item $|y^*| < 1.2$
-%\item $\mjj > 1717~\GeV$
-%\end{itemize}
-
-%The optimisation of these cuts is described in Section~\ref{sub:phaseSpace}. 
+The above cuts define the inclusive samples.
+The following additonal cuts are additional for quark-gluon tagging.
+\begin{itemize}
+\item $|\eta| < 0.21$ (both jets)
+\item $\ge 1$ gluon tagged
+\item 1 gluons tagged
+\end{itemize}
 
 \subsection{Basic kinematic plots}
 \label{sec:kinematic_distributions}
