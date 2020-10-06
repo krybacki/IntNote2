@@ -61,14 +61,16 @@ summarized in Table~\ref{tab:jetCalibration}.
 			Algorithm & \akt  \\
 			R-parameter & 0.4 \\
 			Input Constituent & EMTopo \\
-			Analysis Release Number & 21.2.65 \\
+			Analysis Release Number & 21.2.121 \\
 			%Calibration tag & JetCalibTools-00-04-76 \\
 			CalibArea tag & 00-04-82 \\
-			Calibration configuration & JES\_data2017\_2016\_2015\_Consolidated\_EMTopo\_2018\_rel21.config \\
+			%Calibration configuration & JES\_data2017\_2016\_2015\_Consolidated\_EMTopo\_2018\_rel21.config \\
+			Calibration configuration & JES\_MC16Recommendation\_Consolidated\_EMTopo\_Apr2019\_Rel21.config \\
 			Calibration sequence (Data) & JetArea\_Residual\_EtaJES\_GSC\_Insitu \\
 			Calibration sequence (MC) & JetArea\_Residual\_EtaJES\_GSC\_Smear \\
-			Calibration configuration (AFII) & JES\_MC16Recommendation\_AFII\_EMTopo\_April2018\_rel21.config \\
-			Calibration sequence (AFII) & JetArea\_Residual\_EtaJES\_GSC \\
+			%Calibration configuration (AFII) & JES\_MC16Recommendation\_AFII\_EMTopo\_April2018\_rel21.config \\
+			Calibration configuration (AFII) & JES\_MC16Recommendation\_AFII\_EMTopo\_Apr2019\_Rel21.config \\
+			Calibration sequence (AFII) & JetArea\_Residual\_EtaJES\_GSC\_Smear \\
 			\hline
 			%\large
 			\multicolumn{2}{|c|}{Selection requirements} \\
@@ -79,7 +81,7 @@ summarized in Table~\ref{tab:jetCalibration}.
 			Jet cleaning & Loose WP \\
 			Batman cleaning & No \\
 			\pT  & $>$150 GeV \\
-			\textbar$\eta$\textbar & $<$5.0 \\
+			\textbar$\eta$\textbar & $<$2.1 \\
 			\hline
 	\end{tabular}
 \caption{Jet selection criteria used in this analysis.}
@@ -127,6 +129,9 @@ In order not to sculpt the \mjj\ distribution in an odd way due to
 different triggers and given the assessment of the turn-on, the analysis
 uses the HLT\_j420 trigger with no cut on the leading jet \pT.
 
+%%Dengfeng Add
+\input{include/yStarcut.tex}
+
 \subsection{Baseline selection}
 \label{sec:base_selection}
 The baseline event selection is applied for all signal regions and
@@ -134,10 +139,14 @@ the cuts applied are:
 \begin{itemize}
 \item Good Run List (GRL): Requirement that all relevant detectors were in a good state ready for physics. The GRLs used for this analysis are:
 	\begin{itemize}
-		\item 2015(3.2\,\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\,\_25ns.xml
-		\item 2016(32.97\,\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns.xml
-		\item 2017(44.31\,\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
-		\item 2018(59.94\,\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
+		%\item 2015(3.2\,\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\,\_25ns.xml
+		%\item 2016(32.97\,\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns.xml
+		%\item 2017(44.31\,\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
+		%\item 2018(59.94\,\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
+                \item 2015(3.2 ~\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns.xml
+        	\item 2016(33 ~\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_PHYS\\\_StandardGRL\_All\_Good\_25ns.xml
+        	\item 2017(44.2 ~\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns\_JetHLT\_Normal2017.xml
+        	\item 2018(58.5 ~\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
 	\end{itemize}
 \item LAr: Liquid Argon Calorimeter error rejected ( errorState(xAOD::EventInfo::LAr) )
 \item Tile: Tile Calorimeter error rejected ( errorState(xAOD::EventInfo::Tile) )
