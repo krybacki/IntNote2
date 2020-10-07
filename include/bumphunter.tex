@@ -1,44 +1,8 @@
-%\subsection{Search strategy for the resonance analysis: the BumpHunter algorithm}
-%\label{sec:searchstrategy}
-
-%The main statistical test employed in the dijet resonance search is based
-%on the \BumpHunter\ algorithm~\cite{Aaltonen:2008vt,Choudalakis:2011bh} and 
-%is used to establish the presence or absence of a resonance in the dijet
-%mass spectrum, as described in greater detail in previous 
-%publications~\cite{EXOT-2010-07,EXOT-2011-07}. 
-%The algorithm operates on the binned \mjj data, comparing the background estimate with the data in mass intervals of 
-%varying widths formed by combining neighboring bins. Starting with a two-bin signal window,
-%the algorithm scans across the entire distribution, 
-%then steps through successively larger signal windows up to half of the whole fit range. 
-%For each point in the scan, it computes the significance of the difference between the data and the background.
-%The most significant departure from the smooth spectrum
-%(``bump'') is defined by the set of bins that have the smallest probability
-%of arising from a Poisson background fluctuation.
-%During this procedure, the background model is not changed or refit to the data
-%outside of the excluded region.
-
-%The \BumpHunter\ algorithm accounts for the so-called ``look-elsewhere effect'' 
-%~\cite{lyons2008, Gross2010}, by performing a series of pseudo-experiments
-%drawn from the background estimate to determine the probability that random
-%fluctuations in the background-only hypothesis would create an excess 
-%anywhere in the spectrum at least as significant as the one observed.
-%
-%To make practical use of this algorithm, one must ensure the background
-%estimate is not biased by the signal.
-%Therefore, \BumpHunter\ is run in two steps.  In the first, the full
-%distribution is fit and passed to \BumpHunter.
-%If the most significant local excess from the background fit has a $p$-value
-%smaller than 0.01, this region is excluded and a new background fit is
-%performed. The exclusion is then progressively widened bin by bin until
-%the $p$-value of the remaining fitted region is acceptable.  
-%During the 2015 analysis it was found that simply excluding one additional bin on the low mass
-%side of the signal window removed most of the residual bias (if any
-%did exist).  Then the result of this fit is used for the second
-%stage where an unbiased estimate of the global significance of any
-%excess is obtained.
+\section{The BumpHunter algorithm}
+\label{section: bumphunter}
 
 Once the background is derived, the BumpHunter algorithm ~\cite{Aaltonen:2008vt,Choudalakis:2011bh} is employed to test the consistency or discrepancy between background and the observed data.
-It can locate the local excess above the background and quantifies the degree of discrepancy between the observed data and background, based on the frequentist $p$-value from one of three test statistics: $\chi^{2}$, Log Likelihood and BumpHunter(described below).
+This algorithm can locate the local excess above the background and quantifies the degree of discrepancy between the observed data and background, based on the frequentist $p$-value from one of three test statistics: $\chi^{2}$, Log Likelihood and BumpHunter described below.
 
 %\subsection{Frequentist $p$-value}
 %
@@ -125,7 +89,7 @@ For each window in the scan, it computes the significance of the difference betw
 The most significant departure from the background spectrum is defined by the set of bins that has the smallest probability of arising from a Poisson background fluctuation. 
 If the measured $p$-value obtained from the BumpHunter statistic is less than 0.01, it may mean the existence of new physics. 
 
-As the pseudo-experiments are drawn from the background, the random fluctuations in the background-only hypothesis would create an excess anywhere in the spectrum at least as significant as the one observed, so the BumpHunter algorithm also accounts for the look-elsewhere effect~\cite{lyons2008, Gross2010}.
+As the pseudo-experiments are drawn from the background, the random fluctuations in the background-only hypothesis would create an excess anywhere in the spectrum at least as significant as the one observed, so the BumpHunter algorithm also accounts for the look-elsewhere effect.
 
 The $p$-value got in BumpHunter is used to quantify the discrepancy between observed data and background. 
 The residual in each bin can also been quantified by a $p$-value and described in detail in \cite{Choudalakis:2011bh}. 
