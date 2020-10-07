@@ -1,0 +1,89 @@
+\section{Monte Carlo String Samples}
+\label{section: Monte Carlo string samples}
+
+The string-resonance samples are generated using the \str version 1.00
+Monte Carlo event
+generator~\cite{Vakilipourtakalou:2018pfo}.~\footnote{The code can be
+obtained from the HEPForge
+repository \url{https://strings.hepforge.org/}.} 
+The generator outputs LHE files~\cite{Alwall:2006yp} which are upload
+to the rucio storage element for ATLAS official Monte Carlo production.
+This generator was first made available in ATLAS
+release 21.6.7,\texttt{AthGeneration}.   
+We use this release and get the following versions for the axillary
+programs: \pythia~8.240, Lhapdf~6.2.3~\cite{Buckley:2014ana}, and
+EvtGen~1.6.0. 
+The generation was validated with
+release 21.2.6.0,\texttt{AthDerivation} using \texttt{TRUTH1} n-tuples
+prior to official ATLAS Monte Carlo production.
+
+After ATLAS Monte Carlo production of the string samples, errors were
+found in the cross section calculations and the relative event
+generation of each subprocess.
+The event kinematics are correct.
+By using the cross sections in Table~\ref{tab1} one recovers the
+correct signal strength of each sample for different \Ms.
+If one wishes to distinguish the correct contribution of each
+subprocess, the events should be weighted according to the values in
+Table~\ref{tab3}. 
+Using the PDG identifiers of the intial-state partons in the n-tuple
+and the corrections in Table~\ref{tab3}, the MC weights branch of the
+n-tuple has been filled. 
+These weights are to be using in the same way as a MC generator with
+weighted events.  
+
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{crrrrr}\hline\\[-2ex]
+Subprocess             & \multicolumn{5}{c}{\Ms {[TeV]}}\\
+& \multicolumn{1}{c}{7.0} & \multicolumn{1}{c}{7.5} &
+\multicolumn{1}{c}{8.0} & \multicolumn{1}{c}{8.5} &
+\multicolumn{1}{c}{9.0}\\ \\[-2ex]
+\hline\\[-2ex]
+$gg\to q\bar{q} + gg$  & 2.836 & 2.161 & 2.457 & 2.422 & 1.569\\
+$gq\to gq$             & 0.901 & 0.924 & 0.930 & 0.939 & 0.951\\
+$g\bar{q}\to g\bar{q}$ & 4.857 & 5.780 & 3.587 & 4.591 & 6.213\\
+$q\bar{q}\to gg$       & 1.158 & 1.164 & 1.175 & 1.136 & 1.153\\
+\\[-2ex] \hline
+\end{tabular}
+\end{center}
+\caption{Monte Carlo string-resonance subprocess event weights.}
+\label{tab3}
+\end{table}
+
+The string-resonance samples used in this analysis are shown in
+Table~\ref{tab4}. 
+Equal sizes of 20000 events were produced for mc16a, mc16d, and mc16e.
+The samples were simulated with Atlfast-2.
+
+\begin{sidewaystable}[p]
+\begin{small}
+\begin{tabular}{l}
+\hline
+mc16\_13TeV.312404.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms07000.deriv.DAOD\_EXOT2.e7655\_a875\_r9364\_p3929/\\
+mc16\_13TeV.312404.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms07000.deriv.DAOD\_EXOT2.e7655\_a875\_r10201\_p3929/\\
+mc16\_13TeV.312404.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms07000.deriv.DAOD\_EXOT2.e7655\_a875\_r10724\_p3929/\\
+\\
+mc16\_13TeV.312405.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms07500.deriv.DAOD\_EXOT2.e7655\_a875\_r9364\_p3929/\\
+mc16\_13TeV.312405.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms07500.deriv.DAOD\_EXOT2.e7655\_a875\_r10201\_p3929/\\
+mc16\_13TeV.312405.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms07500.deriv.DAOD\_EXOT2.e7655\_a875\_r10724\_p3929/\\
+\\
+mc16\_13TeV.312406.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms08000.deriv.DAOD\_EXOT2.e7655\_a875\_r9364\_p3929/\\
+mc16\_13TeV.312406.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms08000.deriv.DAOD\_EXOT2.e7655\_a875\_r10201\_p3929/\\
+mc16\_13TeV.312406.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms08000.deriv.DAOD\_EXOT2.e7655\_a875\_r10724\_p3929/\\
+\\
+mc16\_13TeV.312407.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms08500.deriv.DAOD\_EXOT2.e7655\_a875\_r9364\_p3929/\\
+mc16\_13TeV.312407.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms08500.deriv.DAOD\_EXOT2.e7655\_a875\_r10201\_p3929/\\
+mc16\_13TeV.312407.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms08500.deriv.DAOD\_EXOT2.e7655\_a875\_r10724\_p3929/\\
+\\
+mc16\_13TeV.312408.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms09000.deriv.DAOD\_EXOT2.e7655\_a875\_r9364\_p3929/\\
+mc16\_13TeV.312408.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms09000.deriv.DAOD\_EXOT2.e7655\_a875\_r10201\_p3929/\\
+mc16\_13TeV.312408.STRINGSPythia8EvtGen\_A14CTEQ6L1\_STR\_Ms09000.deriv.DAOD\_EXOT2.e7655\_a875\_r10724\_p3929/\\
+\hline
+\end{tabular}
+\end{small}
+\caption{ATLAS Monte Carlo string-resonance samples.}
+\label{tab4}
+\end{sidewaystable}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
