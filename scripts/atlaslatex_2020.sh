@@ -22,7 +22,6 @@ function cf_files {
 }
 
 DIR=`basename ${PWD}`
-DIR='ANA-EXOT-2019-32-INT1'
 echo $DIR
 
 # Check we are in the right directory

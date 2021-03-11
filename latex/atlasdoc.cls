@@ -1,5 +1,5 @@
 %-------------------------------------------------------------------------------
-% Template class for ATLAS documents
+% Template class for ATLAS documents.
 %
 % See ChangeLog or Git log for history of changes.
 % Responsible: Ian Brock (ian.brock@cern.ch)
@@ -7,11 +7,10 @@
 % Note that this file can be overwritten when atlaslatex is updated.
 % if TeX Live 2014 is used and xpatch is needed, have to load mhchem first.
 %
-% Copyright (C) 2002-2020 CERN for the benefit of the ATLAS collaboration
+% Copyright (C) 2002-2021 CERN for the benefit of the ATLAS collaboration.
 %-------------------------------------------------------------------------------
-\def\ATPackageVersion{09-00-03}
-
-\ProvidesClass{latex/atlasdoc}[2020/07/23 v.09-00-03 ATLAS document class]
+\def\ATPackageVersion{10.3.0}
+\ProvidesClass{latex/atlasdoc}[2021/02/09 v10.3.0 ATLAS document class]
 % Needs 2013 TeX Live or later
 \NeedsTeXFormat{LaTeX2e}[2013/01/01]
 
@@ -47,7 +46,7 @@
 \DeclareBoolOption[true]{floatopt}
 \DeclareBoolOption[true]{mathlines}
 \DeclareBoolOption[true]{linenofix}
-\DeclareBoolOption[false]{texmf}
+\DeclareBoolOption[true]{texmf}
 \DeclareBoolOption[true]{newtx}
 \DeclareBoolOption[false]{txfonts}
 \DeclareBoolOption[false]{libertine}
@@ -394,7 +393,11 @@
     \DeclareTOCStyleEntry[beforeskip=0pt plus .2pt,linefill=\hfill]{tocline}{subsubsection}
   }
   % Table of contents down to \ADOC@tocdepth which is 1 by default
-  \setcounter{tocdepth}{\ADOC@tocdepth}
+  \ifthenelse{\ADOC@texlive < 2014}{%
+    \setcounter{tocdepth}{2}
+  }{%
+    \setcounter{tocdepth}{\ADOC@tocdepth}
+  }
   % Figure and table captions
   \setkomafont{caption}{\normalfont\small}
   \setcapindent{0pt}
@@ -577,14 +580,15 @@
 
 % Pass comment option to atlascomment.sty
 \ifADOC@LANGEDIT
+  \def\ADOC@atlascomment{\ATLASLATEXPATH atlascomment}
   \ifADOC@LANGSHOW
     \typeout{atlasdoc: turn on display of language editor comments}
-    \PassOptionsToPackage{comment=true}{\ATLASLATEXPATH atlascomment}
+    \PassOptionsToPackage{comment=true}{\ADOC@atlascomment}
   \else
     \typeout{atlasdoc: turn off display of language editor comments}
-    \PassOptionsToPackage{comment=false}{\ATLASLATEXPATH atlascomment}
+    \PassOptionsToPackage{comment=false}{\ADOC@atlascomment}
   \fi
-  \RequirePackage{\ATLASLATEXPATH atlascomment}
+  \RequirePackage{\ADOC@atlascomment}
 \fi
 
 % Length needed for parbox/minipage in title page

@@ -7,6 +7,7 @@
 *-eps-converted-to.pdf
 
 # Generic files to ignore
+*.DS_Store
 *.aux
 *.bcf
 *.bbl
@@ -23,3 +24,4 @@
 *.spl
 *.synctex.gz
 *.toc
+€kd€ku€ku€kd:q

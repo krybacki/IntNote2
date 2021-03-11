@@ -1,15 +1,15 @@
 %-------------------------------------------------------------------------------
-% List of packages that can or should be used in ATLAS documents
+% List of packages that can or should be used in ATLAS documents.
 %
 % See ChangeLog or Git log for history of changes.
 % Responsible: Ian Brock (ian.brock@cern.ch)
 %
 % Note that this file can be overwritten when atlaslatex is updated.
 %
-% Copyright (C) 2002-2020 CERN for the benefit of the ATLAS collaboration
+% Copyright (C) 2002-2021 CERN for the benefit of the ATLAS collaboration.
 %-------------------------------------------------------------------------------
+\ProvidesPackage{latex/atlaspackage}[2021/02/09 v10.3.0 ATLAS LaTeX packages]
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{latex/atlaspackage}[2020/07/23 v.09-00-03 ATLAS LaTeX packages]
 
 %-------------------------------------------------------------------------------
 % More advanced if syntax
@@ -41,6 +41,7 @@
 \DeclareBoolOption[false]{physics}
 \DeclareBoolOption[false]{rotating}
 \DeclareBoolOption[false]{xfrac}
+\DeclareBoolOption[false]{longtable}
 \DeclareBoolOption[false]{xtab}
 % Miscellaneous packages and options
 \DeclareBoolOption[true]{lineno}
@@ -329,10 +330,13 @@
 }{}
 
 % Tables that go over more than one page
-\ifthenelse{\boolean{APKG@xtab}}{%
-  \RequirePackage{xtab}
-}{}
-% \RequirePackage{longtable}
+\ifthenelse{\boolean{APKG@longtable}}{%
+  \RequirePackage{longtable}
+}{%
+  \ifthenelse{\boolean{APKG@xtab}}{%
+    \RequirePackage{xtab}
+  }{}%
+}
 % \RequirePackage{supertable}
 
 % hyperref is usually included as late as possible
@@ -382,17 +386,18 @@
 \ifAPKG@biblatex
   % \typeout{atlaspackage: block set to \APKG@block}
   % \typeout{atlaspackage: maxbibnames set to \APKG@maxbibnames}
+  \def\ADOC@atlasbiblatex{\ATLASLATEXPATH atlasbiblatex}
   \ifx\APKG@block\@empty%
     \relax
   \else
     \typeout{atlaspackage: passing block option to biblatex}
-    \PassOptionsToPackage{block=\APKG@block}{\ATLASLATEXPATH atlasbiblatex}
+    \PassOptionsToPackage{block=\APKG@block}{\ADOC@atlasbiblatex}
   \fi
   \ifx\APKG@maxbibnames\@empty%
     \relax
   \else
     \typeout{atlaspackage: passing maxbibnames option to biblatex}
-    \PassOptionsToPackage{maxbibnames=\APKG@maxbibnames}{\ATLASLATEXPATH atlasbiblatex}
+    \PassOptionsToPackage{maxbibnames=\APKG@maxbibnames}{\ADOC@atlasbiblatex}
   \fi
   \ifthenelse{\APKG@texlive < 2016}{%
     \RequirePackage[backend=\APKG@backend,
