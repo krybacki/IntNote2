@@ -5,11 +5,11 @@
 % https://tex.stackexchange.com/questions/322010/pdflatex-glyph-undefined-symbols-disappear-from-included-pdf
 %-------------------------------------------------------------------------------
 % Specify where ATLAS LaTeX style files can be found.
-\RequirePackage{latex/atlaslatexpath}
+\newcommand*{\ATLASLATEXPATH}{latex/}
 % Use this variant if the files are in a central location, e.g. $HOME/texmf.
 % \newcommand*{\ATLASLATEXPATH}{}
 %-------------------------------------------------------------------------------
-\documentclass[NOTE, atlasdraft=true, texlive=2016, UKenglish]{atlasdoc}
+\documentclass[NOTE, atlasdraft=true, texlive=2016, UKenglish]{\ATLASLATEXPATH atlasdoc}
 % The language of the document must be set: usually UKenglish or USenglish.
 % british and american also work!
 % Commonly used options:
@@ -29,7 +29,7 @@
 
 %-------------------------------------------------------------------------------
 % Extra packages:
-\usepackage[subfigure]{atlaspackage}
+\usepackage[subfigure]{\ATLASLATEXPATH atlaspackage}
 % Commonly used options:
 %  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
 %  backend=bibtex        Use the bibtex backend rather than biber.
@@ -44,13 +44,13 @@
 \usepackage{xcolor}
 %-------------------------------------------------------------------------------
 % Style file with biblatex options for ATLAS documents.
-\usepackage{atlasbiblatex}
+\usepackage{\ATLASLATEXPATH atlasbiblatex}
 
 % Package for creating list of authors and contributors to the analysis.
-\usepackage{atlascontribute}
+\usepackage{\ATLASLATEXPATH atlascontribute}
 
 % Useful macros
-\usepackage{atlasphysics}
+\usepackage{\ATLASLATEXPATH atlasphysics}
 % See doc/atlas_physics.pdf for a list of the defined symbols.
 % Default options are:
 %   true:  journal, misc, particle, unit, xref
