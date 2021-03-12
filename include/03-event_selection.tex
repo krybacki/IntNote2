@@ -13,7 +13,7 @@ two key properties of the background to enhance its sensitivity to new
 physics signals:
 
 \begin{itemize}
-	\item The background at high $m_{jj}$ is a smooth and continuously falling spectrum.
+	\item The background at high \mjj\ is a smooth and continuously falling spectrum.
 	\item The background at high mass strongly peaks in the forward
 direction, due to Rutherford $t$- and $u$-channel poles in the cross sections
 for many individual scattering diagrams \cite{Harris:2011bh}.
@@ -23,7 +23,7 @@ Many of the possible signals for the dijet search would appear as a
 resonance peak in \mjj, the invariant mass of the dijet system formed
 from the two highest-\pT\ jets. Resonant signals have $\cos{\theta}$
 distributions which, in contrast to Rutherford scattering, are either
-isotropic or follow some polynomial in $\cos{\theta}$\footnote{See
+isotropic or follow some polynomial in $\cos{\theta}$~\footnote{See
 Ref.~\cite{Harris:2011bh} p15 for a summary.}, giving them a distinct
 angular distribution from QCD processes. For this reason, the \mjj\
 search selects events with small angle separation via an upper limit on
@@ -49,15 +49,15 @@ summarized in Table~\ref{tab:jetCalibration}.
 
 \begin{table}[ht]
 	\label{tab:jetCalibration}
-		\begin{tabular}{|c|c|}
-			\hline
+		\begin{tabular}{lc}
+			\toprule
 			%\large
-			\multicolumn{2}{|c|}{Jet reconstruction parameters} \\
+			\multicolumn{2}{c}{Jet reconstruction parameters} \\
 			%\normalsize
 			%\normalsize
-			\hline
+			\midrule
 			Parameter & Value \\
-			\hline
+			\midrule
 			Algorithm & \akt  \\
 			R-parameter & 0.4 \\
 			Input Constituent & EMTopo \\
@@ -71,18 +71,18 @@ summarized in Table~\ref{tab:jetCalibration}.
 			%Calibration configuration (AFII) & JES\_MC16Recommendation\_AFII\_EMTopo\_April2018\_rel21.config \\
 			Calibration configuration (AFII) & JES\_MC16Recommendation\_AFII\_EMTopo\_Apr2019\_Rel21.config \\
 			Calibration sequence (AFII) & JetArea\_Residual\_EtaJES\_GSC\_Smear \\
-			\hline
+			\midrule
 			%\large
-			\multicolumn{2}{|c|}{Selection requirements} \\
+			\multicolumn{2}{c}{Selection requirements} \\
 			%\normalsize
-			\hline
+			\midrule
 			Observable & Requirement \\
-			\hline
+			\midrule
 			Jet cleaning & Loose WP \\
 			Batman cleaning & No \\
 			\pT  & $>$150 GeV \\
 			\textbar$\eta$\textbar & $<$2.1 \\
-			\hline
+			\bottomrule
 	\end{tabular}
 \caption{Jet selection criteria used in this analysis.}
 \end{table}
@@ -130,61 +130,7 @@ different triggers and given the assessment of the turn-on, the analysis
 uses the HLT\_j420 trigger with no cut on the leading jet \pT.
 
 %%Dengfeng Add
-\input{include/yStarcut.tex}
 
-\input{include/massturnon.tex}
-
-\subsection{Baseline selection}
-\label{sec:base_selection}
-The baseline event selection is applied for all signal regions and
-the cuts applied are:
-\begin{itemize}
-\item Good Run List (GRL): Requirement that all relevant detectors were in a good state ready for physics. The GRLs used for this analysis are:
-	\begin{itemize}
-		%\item 2015(3.2\,\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\,\_25ns.xml
-		%\item 2016(32.97\,\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns.xml
-		%\item 2017(44.31\,\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
-		%\item 2018(59.94\,\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
-                \item 2015(3.2 ~\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns.xml
-        	\item 2016(33 ~\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_PHYS\\\_StandardGRL\_All\_Good\_25ns.xml
-        	\item 2017(44.2 ~\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns\_JetHLT\_Normal2017.xml
-        	\item 2018(58.5 ~\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
-	\end{itemize}
-\item LAr: Liquid Argon Calorimeter error rejected ( errorState(xAOD::EventInfo::LAr) )
-\item Tile: Tile Calorimeter error rejected ( errorState(xAOD::EventInfo::Tile) )
-\item SCT: SCT single event upsets rejected ( errorState(xAOD::EventInfo::SCT) )
-\item Core: Incomplete event build rejected ( isEventFlagBitSet(xAOD::EventInfo::Core, 18) )
-\item All jets with $\pt\ge 150~\GeV$ pass LooseBad cleaning cuts
-\item Primary Vertex: the highest $\sum\pt^{2}(trk)$ (xAOD::VxType::VertexType::PriVtx) vertex has at least two tracks associated with it
-\item Trigger: Passes the lowest unprescaled single-jet trigger, HLT\_j420
-\item Jet preselecton: Leading jet $\pt\ge 380~\GeV$ and Jet multiplicity $\ge 2$
-\end{itemize}
-
-Additional kinematic selection criteria are used for the resonance to optimise the search potential and ensure good tracking efficiency. 
-
-The following cuts are applied to the H$^\prime$ search.
-\begin{itemize}
-\item $|\Delta\phi| > 1.0$
-\item $|\ystar| < 0.6$
-\item $\mjj > 1100~\GeV$
-\end{itemize}
-
-The following cuts are applied to the string resonace search.
-\begin{itemize}
-\item $|\ystar| < 0.8$
-\item $\mjj > 1717~\GeV$
-\end{itemize}
-
-The above cuts define the inclusive samples.
-The following additonal cuts are for quark-gluon tagging.
-\begin{itemize}
-\item $|\eta| < 0.21$ (both jets)
-\item $\ge 1$ gluon tagged (75\% working point)
-\item 2 gluons tagged (75\% working point)
-\end{itemize}
-
-\noindent
-where the 75\% gluon selecton criteria is $n{500} > -7.26742 + 4.16218\ln(\pt)$.
 
 \subsection{Basic kinematic plots}
 \label{sec:kinematic_distributions}
@@ -452,7 +398,7 @@ Run-2 data are presented in Tables~\ref{tab:cutFlow_resonance_run2} and
 		\hline\hline
 	\end{tabular}
 	\caption{Cutflow for
-		events with H$^\prime$ cuts:  $m_{jj}>1100~\GeV$, and $|\ystar|<0.6$. .
+		events with H$^\prime$ cuts:  $\mjj>1100~\GeV$, and $|\ystar|<0.6$. .
 		\label{tab:cutFlow_resonance_run2} }
 \end{table}
 

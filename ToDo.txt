@@ -1,0 +1,36 @@
+
+
+General
+
+- Use ATLAS predefined variables for quantities... 
+
+Introduction...  
+
+- remove referral to 2015/16  analysis and update for full Run II
+- remove contact etc... 
+- Push Q?G earlier... 
+- Remove 1.3
+
+Benchmark 
+
+- {Are we going to use NLO k-factors. If not remove this bit}
+- {Need H$^\prime$ write up}
+- {If doing comparison limits will we use \qstar\ }
+- {Will we use morphing?}
+
+
+Event Selection 
+
+
+- Clean up formulae.
+	- check significance formulae as it has too many braces and is hard to follow...
+	- remove 2 TeV points from Fig 10 add in 6 and 7 TeV? 
+	
+	
+Mass Turn On
+
+	- We really need plots with 5% of the data randomly slected from the whole run. 
+	- We are using the lowest prescale with the smallest amount of pile up to 
+	show the turn on works this needs updating 
+	
+	Fig 12 & 13.

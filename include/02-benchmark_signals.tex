@@ -20,6 +20,9 @@ Samples reconstructed with release 21.2 are used for 2015 and 2016 data as well 
 and next-to-leading order (\NLO) in perturbative \QCD. 
 %Table~\ref{tab:qcdSamps} gives the details on the \QCD~MC used.
 
+
+\todo[inline]{Are we going to use NLO k-factors. If not remove this bit}
+
 In order to obtain a \NLO~prediction from \Pythia~events, they are reweighted to the 
 predictions of NLOJET++ (\NLO~$K$-factors) and subsequently by Electroweak (EW) $\kappa$~factors. 
 These $K$-factors and $\kappa$~factors are binned in \mjj\ and $\chi$; full details are given in Sec.~\ref{sec:ang_bkgd}.  The \NLO\ corrected
@@ -36,48 +39,51 @@ is described in Ref.~\cite{Marshall:2016630}.
 \subsection{Resonant Models}
 \subsubsection{H prime}
 \label{sec:hprime}
-%\subsubsection{Excited quarks}
-%\label{sec:qstar}
-%
-%Excited quark (\qstar) production and subsequent decay to
-%quarks and gluons via gauge interactions has been
-%used as a common benchmark for the dijet mass resonance
-%search~\cite{EXOT-2010-01,EXOT-2010-02,EXOT-2010-07,EXOT-2011-07,EXOT-2013-11,EXOT-2016-21},
-%and it is described in detail in Refs~\cite{Baur:1987ga,Baur:1989kv}.
-%The $qg\to$ \qstar production model~\cite{Baur:1987ga,Baur:1989kv} is used,
-%with the assumption of spin 1/2 and quark-like SM coupling constants.
-%The compositeness scale ($\Lambda$) is set to the \qstar~mass.
-%
-%The excited quark signal templates are generated for different mass values
-%(Table~\ref{tab:qStarSamps}) with the \Pythia~8 event generator~\cite{pythia8},
-%using the A14 tune~\cite{A14tune} and NNPDF2.3 PDF set~\cite{Carrazza:2013axa}. Both light flavor ($u$,$d$,$s$) and heavy flavor ($c$,$b$) quarks are taken into account in
-%the event generation.
-%After a basic selection, no duplicate events have been identified.
-%All samples are fully simulated using \Geant.
-%
-%
-%Figures~\ref{fig:signal_xsec} and~\ref{fig:acc} show the cross sections and
-%acceptances as a function of the signal mass point.  
-%The acceptance shown for the \qstar model for 13~\TeV~center-of-mass energies 
-%uses the full resonance analysis selection (Section~\ref{sec:event_selection}).
-%The interpolation between points is a straight line therefore the
-%acceptance between m=1~\TeV~and m=2~\TeV~is not an accurate representation
-%of what the acceptance of a m=1.5~\TeV~sample would be.  The
-%interpolation is not used but drawn to help guide the eye.
-%
-%\begin{figure}[!htb]
-%  \centering
-%  \subfigure[Cross section]{ \label{fig:signal_xsec} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_QStar_log} }
-%  \subfigure[Acceptance]{ \label{fig:acc} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_QStar} }
-%  \caption{(a) Cross section and (b) acceptance for the 
-%  light-flavored \qstar model for 13~\TeV~center-of-mass energies using the full resonance
-%  analysis selection (Section~\ref{sec:event_selection}).}
-%\end{figure}
+
+\todo[inline]{Need H$^\prime$ write up}
+
+\subsubsection{Excited quarks}
+\label{sec:qstar}
+
+\todo[inline]{If doing comparison limits will we use \qstar\ }
 
 
-\clearpage
-\subsubsection{String}
-\label{sec:string}
+Excited quark (\qstar) production and subsequent decay to
+quarks and gluons via gauge interactions has been
+used as a common benchmark for the dijet mass resonance
+search~\cite{EXOT-2010-01,EXOT-2010-02,EXOT-2010-07,EXOT-2011-07,EXOT-2013-11,EXOT-2016-21},
+and it is described in detail in Refs~\cite{Baur:1987ga,Baur:1989kv}.
+The $qg\to$ \qstar production model~\cite{Baur:1987ga,Baur:1989kv} is used,
+with the assumption of spin 1/2 and quark-like SM coupling constants.
+The compositeness scale ($\Lambda$) is set to the \qstar~mass.
+
+The excited quark signal templates are generated for different mass values
+(Table~\ref{tab:qStarSamps}) with the \Pythia~8 event generator~\cite{pythia8},
+using the A14 tune~\cite{A14tune} and NNPDF2.3 PDF set~\cite{Carrazza:2013axa}. Both light flavor ($u$,$d$,$s$) and heavy flavor ($c$,$b$) quarks are taken into account in
+the event generation.
+After a basic selection, no duplicate events have been identified.
+All samples are fully simulated using \Geant.
+
+
+Figures~\ref{fig:signal_xsec} and~\ref{fig:acc} show the cross sections and
+acceptances as a function of the signal mass point.  
+The acceptance shown for the \qstar model for 13~\TeV~center-of-mass energies 
+uses the full resonance analysis selection (Section~\ref{sec:event_selection}).
+The interpolation between points is a straight line therefore the
+acceptance between m=1~\TeV~and m=2~\TeV~is not an accurate representation
+of what the acceptance of a m=1.5~\TeV~sample would be.  The
+interpolation is not used but drawn to help guide the eye.
+
+\begin{figure}[!htb]
+  \centering
+  \subfigure[Cross section]{ \label{fig:signal_xsec} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_QStar_log} }
+  \subfigure[Acceptance]{ \label{fig:acc} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_QStar} }
+  \caption{(a) Cross section and (b) acceptance for the 
+  light-flavored \qstar model for 13~\TeV~center-of-mass energies using the full resonance
+  analysis selection (Section~\ref{sec:event_selection}).}
+\end{figure}
+
+
 
 %\subsubsection{Quantum Black Holes}
 %\label{sec:QBH}
@@ -115,93 +121,93 @@ is described in Ref.~\cite{Marshall:2016630}.
 %
 %\clearpage
 
-%\subsubsection{\Zprime\ models}
-%\label{sec:Zprime}
-%
-%Searches for dijet resonances play an important role in constraining
-%possible interactions between dark matter, or a "dark sector," and the
-%Standard Model. In this analysis, we consider the pure axial-vector
-%leptophobic \Zprime\ model described by the ATLAS-CMS Dark Matter Forum
-%Report \cite{Abercrombie:2015wmb}, in the specific scenario outlined in Ref.\cite{Chala:2015ama}, 
-%where dijet searches complement mono-jet-like searches in regions of
-%parameter space where the decay of the \Zprime\ to invisible particles is
-%kinetically suppressed. Regions of the parameter space of this model
-%remain which can be probed by dijet resonance searches but LUX, relic
-%density constraints, and monojet searches cannot constrain.
-%% 
-%In this model, the \Zprime\ arises from a simple extension of the Standard
-%Model (SM) with an additional $U(1)$ gauge symmetry and a Dirac
-%fermion Dark Matter particle that has charges only under this new
-%group. Assuming that some SM particles are also charged under this
-%group, the \Zprime\ can mediate interactions between the SM and DM. The DM
-%particle $\chi$ has a mass $m_{DM}$. The spin-1 \Zprime\ has mass \mMed.
-%
-%The Dark Matter Forum reports models with vector or axial-vector couplings
-%between the spin-1 mediator $\Zprime$ and SM and DM fields, with the corresponding interaction Lagrangians:
-%
-%\begin{align}
-%	\label{eq:AV}
-%	\mathcal{L}_{\mathrm{vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\chiDM \\
-%	\mathcal{L}_{\mathrm{axial-vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}\gamma^5q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\gamma^5\chiDM.
-%\end{align}
-%
-%The parameters in the model are thus
-%\begin{equation}
-%\left\{~\gq, 
-%~ \gDM, 
-%~\mDM,
-%~\mMed,
-%\right\} \,.
-%\end{equation}
-%
-%where ~\gq is the coupling of the \Zprime\ mediator to quarks, ~ \gDM
-%is its coupling to the Dark Matter fermion, ~\mDM is the mass
-%of the Dark Matter fermion and~\mMed is the \Zprime\ mass. 
-%
-%The two most relevant parameters of this model in the dijet search are the coupling of the \Zprime\ to quarks
-%as it drives the intrinsic width of the resonance, and the \Zprime\ mass. 
-%These two parameters are scanned to obtain the signal grid used
-%for the limit setting. The Dark Matter mass is fixed at 10 TeV and the coupling to DM to 1.5, with 
-%a negligible effect on the resonance width. 
-%% 
-%The values of $\gq$ and $\mMed$ have been kept consistent with the previous published dijet result.
-%The requested $\mMed$ points only go up to 3.5~TeV. This is where the resonance reaches the maximum width
-%that this search is sensitive to, without incurring in significant background distortion. 
-%For wider signals, it would be necessary to account for interference with the standard model.
-%
-%The grid of samples produced in full simulation is shown in Table~\ref{tab:ZPrimeScan}.
-%
-%\begin{table}[!h]
-%	\centering
-%		\begin{tabular}{| l |r r r r r r r r r r|}
-%			\hline
-%			\multicolumn{1}{|c|}{\mMed/\gev} & \multicolumn{10}{c|}{\gq} \\
-%			\hline
-%			1500   	       &         0.1  & 0.2 & 0.3 &  &  &  &  &  &  &  \\
-%			2000           &         0.1  & 0.2 & 0.3 & 0.4  &  &  &  &  &  &  \\
-%			2500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
-%			3000           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
-%			3500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
-%			\hline
-%		\end{tabular}
-%%	}
-%	\caption{Parameter grid in \gq and \mMed scanned in full simulation with 25 ns configuration.}.
-%	\label{tab:ZPrimeScan}
-%\end{table}
+\subsubsection{\Zprime\ models}
+\label{sec:Zprime}
+
+Searches for dijet resonances play an important role in constraining
+possible interactions between dark matter, or a "dark sector," and the
+Standard Model. In this analysis, we consider the pure axial-vector
+leptophobic \Zprime\ model described by the ATLAS-CMS Dark Matter Forum
+Report \cite{Abercrombie:2015wmb}, in the specific scenario outlined in Ref.\cite{Chala:2015ama}, 
+where dijet searches complement mono-jet-like searches in regions of
+parameter space where the decay of the \Zprime\ to invisible particles is
+kinetically suppressed. Regions of the parameter space of this model
+remain which can be probed by dijet resonance searches but LUX, relic
+density constraints, and monojet searches cannot constrain.
 % 
-% The acceptances %and cross-sections 
-% for the \Zprime\ samples
-% are shown in Figure~\ref{fig:zprime_acc}.% and \ref{fig:zprime_xsec} respectively. 
-%
-% \begin{figure}[!htb]
-%   \centering
-%   \includegraphics[width=0.45\textwidth]{figures/benchmark_signals/Acceptances_AllZPrime.eps}
-%   \caption{Acceptance for the \Zprime\ models 
-%   for 13~\TeV~center-of-mass energies using the full resonance
-%   analysis selection (Section~\ref{sec:event_selection}).
-%   \label{fig:zprime_acc}}
-% \end{figure}
+In this model, the \Zprime\ arises from a simple extension of the Standard
+Model (SM) with an additional $U(1)$ gauge symmetry and a Dirac
+fermion Dark Matter particle that has charges only under this new
+group. Assuming that some SM particles are also charged under this
+group, the \Zprime\ can mediate interactions between the SM and DM. The DM
+particle $\chi$ has a mass $m_{DM}$. The spin-1 \Zprime\ has mass \mMed.
+
+The Dark Matter Forum reports models with vector or axial-vector couplings
+between the spin-1 mediator $\Zprime$ and SM and DM fields, with the corresponding interaction Lagrangians:
+
+\begin{align}
+	\label{eq:AV}
+	\mathcal{L}_{\mathrm{vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\chiDM \\
+	\mathcal{L}_{\mathrm{axial-vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}\gamma^5q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\gamma^5\chiDM.
+\end{align}
+
+The parameters in the model are thus
+\begin{equation}
+\left\{~\gq, 
+~ \gDM, 
+~\mDM,
+~\mMed,
+\right\} \,.
+\end{equation}
+
+where ~\gq is the coupling of the \Zprime\ mediator to quarks, ~ \gDM
+is its coupling to the Dark Matter fermion, ~\mDM is the mass
+of the Dark Matter fermion and~\mMed is the \Zprime\ mass. 
+
+The two most relevant parameters of this model in the dijet search are the coupling of the \Zprime\ to quarks
+as it drives the intrinsic width of the resonance, and the \Zprime\ mass. 
+These two parameters are scanned to obtain the signal grid used
+for the limit setting. The Dark Matter mass is fixed at 10 TeV and the coupling to DM to 1.5, with 
+a negligible effect on the resonance width. 
 % 
+The values of $\gq$ and $\mMed$ have been kept consistent with the previous published dijet result.
+The requested $\mMed$ points only go up to 3.5~TeV. This is where the resonance reaches the maximum width
+that this search is sensitive to, without incurring in significant background distortion. 
+For wider signals, it would be necessary to account for interference with the standard model.
+
+The grid of samples produced in full simulation is shown in Table~\ref{tab:ZPrimeScan}.
+
+\begin{table}[!h]
+	\centering
+		\begin{tabular}{| l |r r r r r r r r r r|}
+			\hline
+			\multicolumn{1}{|c|}{\mMed/\gev} & \multicolumn{10}{c|}{\gq} \\
+			\hline
+			1500   	       &         0.1  & 0.2 & 0.3 &  &  &  &  &  &  &  \\
+			2000           &         0.1  & 0.2 & 0.3 & 0.4  &  &  &  &  &  &  \\
+			2500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
+			3000           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
+			3500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
+			\hline
+		\end{tabular}
+%	}
+	\caption{Parameter grid in \gq and \mMed scanned in full simulation with 25 ns configuration.}.
+	\label{tab:ZPrimeScan}
+\end{table}
+ 
+ The acceptances %and cross-sections 
+ for the \Zprime\ samples
+ are shown in Figure~\ref{fig:zprime_acc}.% and \ref{fig:zprime_xsec} respectively. 
+
+ \begin{figure}[!htb]
+   \centering
+   \includegraphics[width=0.45\textwidth]{figures/benchmark_signals/Acceptances_AllZPrime.eps}
+   \caption{Acceptance for the \Zprime\ models 
+   for 13~\TeV~center-of-mass energies using the full resonance
+   analysis selection (Section~\ref{sec:event_selection}).
+   \label{fig:zprime_acc}}
+ \end{figure}
+ 
 % \clearpage
 %\subsubsection{\Wstar\ Model}
 %\label{sec:Wstar}
@@ -258,6 +264,11 @@ is described in Ref.~\cite{Marshall:2016630}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \clearpage
 %
+\clearpage
+\subsubsection{String}
+\label{sec:string}
+
+
 The quadratically divergent corrections to the Higgs self-energy is a
 well known problem of the Standard Model.
 Supersymmetry offers a solution to this problem by fine-tuning the
@@ -510,30 +521,32 @@ tune~\cite{ATL-PHYS-PUB-2016-017} over the original hard-scattering event.
 \label{sec:SwiftMorphing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\todo[inline] {Will we use morphing?}
 
-Smooth signal mass distributions are obtained  from morphing the signal shapes from MC. The MC signals are fit to a Gaussian + reverse Landau function, a parameterization that has one normalization and five shape parameters. The parameters are interpolated as a function of mass using cubic splines. This allows the use of signal shapes at any mass. Figure~\ref{fig:morphing} shows some examples of fits to MC signal shapes as well as several interpolated signal shapes.  
 
-\begin{figure}[!htb]
-	\centering
-	\subfigure[q* signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolate_qStar.pdf} }
-	\subfigure[Reclustered W' signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolate_WPrimeRe.pdf} }
-	\subfigure[Z' 0.2 SM coupling signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/ZPrime_gSM0p20.pdf} }
-	\subfigure[Z' 0.5 SM coupling signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/ZPrime_gSM0p50.pdf} }
-	\caption{
-		Signal morphing for some MC signals. The solid colored histograms are MC signal shapes and the dotted lines of the same color are fit to the MC shapes. The dotted pink curves are the morphed shapes.  
-		\label{fig:morphing}}
-\end{figure}
-
-To stress test the morphing technique, tests were done where the a set of mass MC signal shapes were removed and the morphing was done with the remaining shapes. The results of this test is shown in figure~\ref{fig:morphingTest}, where in (a) integer MC q* shapes (2 \TeV\ , 3 \TeV\ , 4 \TeV\ , 5 \TeV\ , 6 \TeV\ ) are removed and morphing is done using the odd shapes only and in (b) fractional MC shapes (2.5 \TeV\ , 3.5 \TeV\ , 4.5 \TeV\ , 5.5 \TeV\ ) are removed and the even shapes are used for morphing. The technique recovers the shapes of the removed signals fairly well.  
-
-\begin{figure}[!htb]
-	\centering
-	\subfigure[q* signals. Morphing with odd masses only.]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolateWorking_evenRemoved.pdf} }
-	\subfigure[q* signals. Morphing with even masses only.]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolateWorking_oddRemoved.pdf} }
-	\caption{
-		Signal morphing stress test. (a) Even mass signals are removed and morphing is done with odd masses only. (b) Odd mass signals are removed and morphing is done with even masses only. 
-		\label{fig:morphingTest}}
-\end{figure}  
-
+%Smooth signal mass distributions are obtained  from morphing the signal shapes from MC. The MC signals are fit to a Gaussian + reverse Landau function, a parameterization that has one normalization and five shape parameters. The parameters are interpolated as a function of mass using cubic splines. This allows the use of signal shapes at any mass. Figure~\ref{fig:morphing} shows some examples of fits to MC signal shapes as well as several interpolated signal shapes.  
+%
+%\begin{figure}[!htb]
+%	\centering
+%	\subfigure[q* signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolate_qStar.pdf} }
+%	\subfigure[Reclustered W' signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolate_WPrimeRe.pdf} }
+%	\subfigure[Z' 0.2 SM coupling signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/ZPrime_gSM0p20.pdf} }
+%	\subfigure[Z' 0.5 SM coupling signals]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/ZPrime_gSM0p50.pdf} }
+%	\caption{
+%		Signal morphing for some MC signals. The solid colored histograms are MC signal shapes and the dotted lines of the same color are fit to the MC shapes. The dotted pink curves are the morphed shapes.  
+%		\label{fig:morphing}}
+%\end{figure}
+%
+%To stress test the morphing technique, tests were done where the a set of mass MC signal shapes were removed and the morphing was done with the remaining shapes. The results of this test is shown in figure~\ref{fig:morphingTest}, where in (a) integer MC q* shapes (2 \TeV\ , 3 \TeV\ , 4 \TeV\ , 5 \TeV\ , 6 \TeV\ ) are removed and morphing is done using the odd shapes only and in (b) fractional MC shapes (2.5 \TeV\ , 3.5 \TeV\ , 4.5 \TeV\ , 5.5 \TeV\ ) are removed and the even shapes are used for morphing. The technique recovers the shapes of the removed signals fairly well.  
+%
+%\begin{figure}[!htb]
+%	\centering
+%	\subfigure[q* signals. Morphing with odd masses only.]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolateWorking_evenRemoved.pdf} }
+%	\subfigure[q* signals. Morphing with even masses only.]{ \includegraphics[width=0.48\textwidth]{figures/SWiFt/interpolateWorking_oddRemoved.pdf} }
+%	\caption{
+%		Signal morphing stress test. (a) Even mass signals are removed and morphing is done with odd masses only. (b) Odd mass signals are removed and morphing is done with even masses only. 
+%		\label{fig:morphingTest}}
+%\end{figure}  
+%
 
 
