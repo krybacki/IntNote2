@@ -1,8 +1,8 @@
 This section outlines benchmark models for both Quantum Chromodynamics (\QCD)~and for new
-physics signals and is taken directly from \cite{Bauce:2226443}. These are used in the search and limit-setting phases of the
+physics signals. These are used in the search and limit-setting phases of the
 analysis and for testing the effects of potential
-resonant and non-resonant signals on the search phase.
-The main characteristics of resonant and non-resonant
+resonant signals on the search phase.
+The main characteristics of resonant
 signals are encapsulated in the models chosen:
 \Hprime\ , String.
 %excited quarks (\qstar{}), quantum black holes (\QBH), 
@@ -12,22 +12,13 @@ signals are encapsulated in the models chosen:
 %a \Wstar\ signal with decays to quarks,
 %and non-resonant contact interactions (\CI).
 
-Samples reconstructed with release 21.2 are used for 2015 and 2016 data as well as for Monte Carlo. EXOT2 skimmed samples, described in~\cite{ATLAS:Exot2Derivation}, are used in this analysis.
+Samples reconstructed with release 21 are used for data as well as for Monte Carlo. EXOT2 skimmed samples, described in~\cite{ATLAS:Exot2Derivation}, are used in this analysis.
 
 \subsection{Quantum Chromodynamics}
 \label{qcdsamps}
 \QCD processes from the SM are simulated at leading order (\LO)
 and next-to-leading order (\NLO) in perturbative \QCD. 
-%Table~\ref{tab:qcdSamps} gives the details on the \QCD~MC used.
-
-
-\todo[inline]{Are we going to use NLO k-factors. If not remove this bit}
-
-In order to obtain a \NLO~prediction from \Pythia~events, they are reweighted to the 
-predictions of NLOJET++ (\NLO~$K$-factors) and subsequently by Electroweak (EW) $\kappa$~factors. 
-These $K$-factors and $\kappa$~factors are binned in \mjj\ and $\chi$; full details are given in Sec.~\ref{sec:ang_bkgd}.  The \NLO\ corrected
-version of \Pythia8 is used for the statistical comparison of the 
-data to the background for the angular analysis.
+Appendix~\ref{sec:qcdsample} gives the details on the \QCD~MC used.
 
 \QCD samples span such a large range in cross section that the
 production must be split in order to obtain comparable statistical precision
@@ -46,232 +37,9 @@ A model-independent motivation for digluon resonances is that at high \mjj\, the
 
 For this analysis, we have simulated SU(3) singlet scalar production and decay using Pythia 8 with the A14 set of tuned parameters\footnote{See \url{https://its.cern.ch/jira/browse/ATLMCPROD-6155}.}.  In particular, we use HiggsBSM:gg2H2 where the H2 particle is our singlet scalar and has PDGID 35.  The H2 particle is forced to decay to gluons and has a narrow width (set to 0.1 by hand).  The physical width in practice is model-dependent so we set it to be narrow here and thus the \mjj\ width will be set by the detector resolution.
 
-\subsubsection{Excited quarks}
-\label{sec:qstar}
-
-\todo[inline]{If doing comparison limits will we use \qstar\ }
-
-
-Excited quark (\qstar) production and subsequent decay to
-quarks and gluons via gauge interactions has been
-used as a common benchmark for the dijet mass resonance
-search~\cite{EXOT-2010-01,EXOT-2010-02,EXOT-2010-07,EXOT-2011-07,EXOT-2013-11,EXOT-2016-21},
-and it is described in detail in Refs~\cite{Baur:1987ga,Baur:1989kv}.
-The $qg\to$ \qstar production model~\cite{Baur:1987ga,Baur:1989kv} is used,
-with the assumption of spin 1/2 and quark-like SM coupling constants.
-The compositeness scale ($\Lambda$) is set to the \qstar~mass.
-
-The excited quark signal templates are generated for different mass values
-(Table~\ref{tab:qStarSamps}) with the \Pythia~8 event generator~\cite{pythia8},
-using the A14 tune~\cite{A14tune} and NNPDF2.3 PDF set~\cite{Carrazza:2013axa}. Both light flavor ($u$,$d$,$s$) and heavy flavor ($c$,$b$) quarks are taken into account in
-the event generation.
-After a basic selection, no duplicate events have been identified.
-All samples are fully simulated using \Geant.
-
-
-Figures~\ref{fig:signal_xsec} and~\ref{fig:acc} show the cross sections and
-acceptances as a function of the signal mass point.  
-The acceptance shown for the \qstar model for 13~\TeV~center-of-mass energies 
-uses the full resonance analysis selection (Section~\ref{sec:event_selection}).
-The interpolation between points is a straight line therefore the
-acceptance between m=1~\TeV~and m=2~\TeV~is not an accurate representation
-of what the acceptance of a m=1.5~\TeV~sample would be.  The
-interpolation is not used but drawn to help guide the eye.
-
-\begin{figure}[!htb]
-  \centering
-  \subfigure[Cross section]{ \label{fig:signal_xsec} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_QStar_log} }
-  \subfigure[Acceptance]{ \label{fig:acc} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_QStar} }
-  \caption{(a) Cross section and (b) acceptance for the 
-  light-flavored \qstar model for 13~\TeV~center-of-mass energies using the full resonance
-  analysis selection (Section~\ref{sec:event_selection}).}
-\end{figure}
-
-
-
-%\subsubsection{Quantum Black Holes}
-%\label{sec:QBH}
-%\todo{Do QBH decay to quarks or gluons, is there increased sensitivity or not} 
-%The LHC should be able to produce QBH under the condition that the
-%universe contains sufficiently large extra dimensions \cite{RandallMeade}.
-%The quantum-gravity energy scale $M_{D}$ at which micro black holes are produced decreases as the number, $n$,
-%of these large extra dimensions increases, allowing for lower mass scales at larger $n$.
-%
-%In the simplest situation, one would expect approximately isotropic decay of these micro black holes via Hawking
-%radiation to a many-particle final state. This would require black holes (BH) to be produced substantially
-%above their mass threshold in order to have energy for such a decay \cite{Feng:2004}. 
-%However, gravitational interactions are also expected at the scale of the new interaction 
-%(well below the actual thermal black hole production threshold), at which the dominant final state would be two-body ones.
-%Production of these
-%states is expected to begin once the $M_D$ energy threshold is reached. 
-%This results in a resonance-like production of predominantly
-%two-body final states, mainly jets, near $M_D$. The dijet analysis, then, is a way to search for such
-%isotropic final states as probes of quantum gravitational effects.
-%
-%The \BlackMax~\cite{Dai:2007ki} MC generator is used to simulate quantum black holes events with $n=6$. The samples used in the analysis
-%are listed in Table~\ref{tab:qbhSamps}. Cross sections and acceptances for the model are given in figures~\ref{fig:signal_xsec_blackmax} and~\ref{fig:acc_blackmax} respectively.
-%
-%\begin{figure}[!htb]
-%  \centering
-%  \subfigure[Cross section]{\label{fig:signal_xsec_blackmax} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_BlackMax_log}}
-%  \subfigure[Acceptance]{  \label{fig:acc_blackmax}\includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_BlackMax}}
-%  \caption{(a) Cross section and (b) acceptance for the 
-%  \BlackMax\ model for 13~\TeV~center-of-mass energies using the full resonance
-%  analysis selection (Section~\ref{sec:event_selection}).}
-%
-%\end{figure}
-%
-%
-%
-%\clearpage
-
-\subsubsection{\Zprime\ models}
-\label{sec:Zprime}
-
-Searches for dijet resonances play an important role in constraining
-possible interactions between dark matter, or a "dark sector," and the
-Standard Model. In this analysis, we consider the pure axial-vector
-leptophobic \Zprime\ model described by the ATLAS-CMS Dark Matter Forum
-Report \cite{Abercrombie:2015wmb}, in the specific scenario outlined in Ref.\cite{Chala:2015ama}, 
-where dijet searches complement mono-jet-like searches in regions of
-parameter space where the decay of the \Zprime\ to invisible particles is
-kinetically suppressed. Regions of the parameter space of this model
-remain which can be probed by dijet resonance searches but LUX, relic
-density constraints, and monojet searches cannot constrain.
-% 
-In this model, the \Zprime\ arises from a simple extension of the Standard
-Model (SM) with an additional $U(1)$ gauge symmetry and a Dirac
-fermion Dark Matter particle that has charges only under this new
-group. Assuming that some SM particles are also charged under this
-group, the \Zprime\ can mediate interactions between the SM and DM. The DM
-particle $\chi$ has a mass $m_{DM}$. The spin-1 \Zprime\ has mass \mMed.
-
-The Dark Matter Forum reports models with vector or axial-vector couplings
-between the spin-1 mediator $\Zprime$ and SM and DM fields, with the corresponding interaction Lagrangians:
-
-\begin{align}
-	\label{eq:AV}
-	\mathcal{L}_{\mathrm{vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\chiDM \\
-	\mathcal{L}_{\mathrm{axial-vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}\gamma^5q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\gamma^5\chiDM.
-\end{align}
-
-The parameters in the model are thus
-\begin{equation}
-\left\{~\gq, 
-~ \gDM, 
-~\mDM,
-~\mMed,
-\right\} \,.
-\end{equation}
-
-where ~\gq is the coupling of the \Zprime\ mediator to quarks, ~ \gDM
-is its coupling to the Dark Matter fermion, ~\mDM is the mass
-of the Dark Matter fermion and~\mMed is the \Zprime\ mass. 
-
-The two most relevant parameters of this model in the dijet search are the coupling of the \Zprime\ to quarks
-as it drives the intrinsic width of the resonance, and the \Zprime\ mass. 
-These two parameters are scanned to obtain the signal grid used
-for the limit setting. The Dark Matter mass is fixed at 10 TeV and the coupling to DM to 1.5, with 
-a negligible effect on the resonance width. 
-% 
-The values of $\gq$ and $\mMed$ have been kept consistent with the previous published dijet result.
-The requested $\mMed$ points only go up to 3.5~TeV. This is where the resonance reaches the maximum width
-that this search is sensitive to, without incurring in significant background distortion. 
-For wider signals, it would be necessary to account for interference with the standard model.
-
-The grid of samples produced in full simulation is shown in Table~\ref{tab:ZPrimeScan}.
-
-\begin{table}[!h]
-	\centering
-		\begin{tabular}{| l |r r r r r r r r r r|}
-			\hline
-			\multicolumn{1}{|c|}{\mMed/\gev} & \multicolumn{10}{c|}{\gq} \\
-			\hline
-			1500   	       &         0.1  & 0.2 & 0.3 &  &  &  &  &  &  &  \\
-			2000           &         0.1  & 0.2 & 0.3 & 0.4  &  &  &  &  &  &  \\
-			2500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
-			3000           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
-			3500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
-			\hline
-		\end{tabular}
-%	}
-	\caption{Parameter grid in \gq and \mMed scanned in full simulation with 25 ns configuration.}.
-	\label{tab:ZPrimeScan}
-\end{table}
- 
- The acceptances %and cross-sections 
- for the \Zprime\ samples
- are shown in Figure~\ref{fig:zprime_acc}.% and \ref{fig:zprime_xsec} respectively. 
-
- \begin{figure}[!htb]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/benchmark_signals/Acceptances_AllZPrime.eps}
-   \caption{Acceptance for the \Zprime\ models 
-   for 13~\TeV~center-of-mass energies using the full resonance
-   analysis selection (Section~\ref{sec:event_selection}).
-   \label{fig:zprime_acc}}
- \end{figure}
- 
-% \clearpage
-%\subsubsection{\Wstar\ Model}
-%\label{sec:Wstar}
-%
-% A search has been performed for a \Wstar, a chiral excitations of the W boson, described in \cite{Chizhov:2010jg}, with further theoretical motivation in \cite{Chizhov:2009fc}. The presence of such an excited boson could be the evidence of W-boson compositeness. These excitations would couple to $qg$ final states and would lead to resonances in the dijet invariant mass spectrum. Their angular distributions would differ strongly from those of all other models considered here, with a $cos^{2}\theta$ dependence that produces an excess focused more towards the forward region. 
-%
-% A simplified model \cite{Chizhov:2010ry}, with the Lagrangian available in the CalcHEP 3.6 generator, has been utilised in the current studies. Using the NNPDF23$\_$nlo PDF, \Wstar event samples have been generated for masses ranging from 1.8 TeV to 4.0 TeV in steps of 200 GeV, which are then passed to Pythia8 for hadronisation. 
-%
-%The Langrangian of this Model is shown in equation (\ref{L}) where $\sin \theta_{X}$ is the mixing angle.
-%
-%\begin{eqnarray}\label{L}
-%{\cal L}_{ref}&=&\frac{g}{\sqrt{2}M_{Z^*_d}}\left(
-%\bar{d}\sigma^{\mu\nu}d+\bar{e}\sigma^{\mu\nu}e
-%\right)\partial_\mu Z^*_{d\nu}+
-%\frac{\sqrt{2}g}{\sqrt{3}M_{Z^*_u}}\left(\bar{u}\sigma^{\mu\nu}\!u\;
-%\partial_\mu {\mathrm Re}Z^*_{u\nu}+
-%i\,\bar{u}\sigma^{\mu\nu}\gamma^5\!u\;
-%\partial_\mu {\mathrm Im}Z^*_{u\nu}\right) \nonumber\\
-%&&\hspace{-0.8cm}+\frac{g}{M_{W^*}}\left(\sin\theta_X\,\overline{u_L}\sigma^{\mu\nu}d_R+
-%\frac{2}{\sqrt{3}}\cos\theta_X\,\overline{u_R}\sigma^{\mu\nu}d_L+
-%\sin\theta_X\,\overline{\nu_L}\sigma^{\mu\nu}e_R
-%\right)\partial_\mu W^{*+}_{X\nu} + {\mathrm h.c.},
-%\end{eqnarray}
-%
-%\Wstar\ samples can be generated using two different mixing angles.
-%\begin{itemize}
-%\label{sec:WstarSamples}
-%\item Using mixing angle ($\sin \theta_X$) = 1 which favours leptonic decay. This leads to lower senstivity to dijet channel but can be used to compare the results with di-lepton final states.
-%\item Using mixing angle ($\sin \theta_X$) = 0 which is lepto-phobic and favours jets as a final state. The advantage of using this condition is to have increase in sensitivity of the search  in dijet final states. 
-%\end{itemize}
-%
-%\Wstar\ states were generated with lepto-phobic mixing angle ($\sin \theta_X$)=0 in this study because of the higher sensitivity of dijet final states in these models.
-%
-%
-%Figures~\ref{fig:Wstar_xsec} and~\ref{fig:Wstar_acc} show the cross sections and
-%acceptances as a function of the signal mass point.  
-%The acceptance shown for the \Wstar\ model for 13 TeV~center-of-mass energies 
-%uses the full resonance analysis selection for \Wstar\ signal (Section~\ref{sec:event_selection} where |y*|<1.2).
-%
-%\begin{figure}[!htb]
-%  \centering
-%  \subfigure[Cross section]{\label{fig:Wstar_xsec}\includegraphics[width=0.48\textwidth]{figures/Wstar/CrossAcceptance/WstarX0_XS.pdf}}
-%  \subfigure[Acceptance]{\label{fig:Wstar_acc}\includegraphics[width=0.48\textwidth]{figures/Wstar/CrossAcceptance/WstarX0_Acc.pdf}}
-%	\caption{(a) Cross section and (b) acceptance for the 
-%		\Wstar\ model for 13 TeV center-of-mass energies using the full resonance analysis selection (Section~\ref{sec:event_selection} except |y*|<1.2).
-%		%   The interpolation between points is a straight line therefore the 
-%		%   acceptance between m=1~\TeV~and m=2~\TeV~is not an accurate representation of
-%		%   what the acceptance of a m=1.5~\TeV~sample would be.  The interpolation
-%		%   is not used but drawn to help guide the eye.
-%        }
-%\end{figure}
-%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \clearpage
-%
 \clearpage
 \subsubsection{String}
 \label{sec:string}
-
 
 The quadratically divergent corrections to the Higgs self-energy is a
 well known problem of the Standard Model.
@@ -471,7 +239,171 @@ crossings (pile-up) is modelled by overlaying simulated inelastic $pp$
 events generated with \pythia~8.186~\cite{Sjostrand:2014zea}
 using NNPDF2.3LO set of PDFs~\cite{Ball:2012cx} and the A3
 tune~\cite{ATL-PHYS-PUB-2016-017} over the original hard-scattering event. 
+
+\subsubsection{Excited quarks}
+\label{sec:qstar}
+
+\todo[inline]{If doing comparison limits will we use \qstar\ or QBH}
+
+Excited quark (\qstar) production and subsequent decay to
+quarks and gluons via gauge interactions has been
+used as a common benchmark for the dijet mass resonance
+search~\cite{EXOT-2010-01,EXOT-2010-02,EXOT-2010-07,EXOT-2011-07,EXOT-2013-11,EXOT-2016-21},
+and it is described in detail in Refs~\cite{Baur:1987ga,Baur:1989kv}.
+The $qg\to$ \qstar production model~\cite{Baur:1987ga,Baur:1989kv} is used,
+with the assumption of spin 1/2 and quark-like SM coupling constants.
+The compositeness scale ($\Lambda$) is set to the \qstar~mass.
+
+The excited quark signal templates are generated for different mass values
+(Appendix~\ref{section:MCqStarSamples}) with the \Pythia~8 event generator~\cite{pythia8},
+using the A14 tune~\cite{A14tune} and NNPDF2.3 PDF set~\cite{Carrazza:2013axa}. Both light flavor ($u$,$d$,$s$) and heavy flavor ($c$,$b$) quarks are taken into account in
+the event generation.
+After a basic selection, no duplicate events have been identified.
+All samples are fully simulated using \Geant.
+
+Figures~\ref{fig:signal_xsec} and~\ref{fig:acc} show the cross sections and
+acceptances as a function of the signal mass point.  
+The acceptance shown for the \qstar model for 13~\TeV~center-of-mass energies 
+uses the full resonance analysis selection (Section~\ref{sec:event_selection}).
+The interpolation between points is a straight line therefore the
+acceptance between m=1~\TeV~and m=2~\TeV~is not an accurate representation
+of what the acceptance of a m=1.5~\TeV~sample would be.  The
+interpolation is not used but drawn to help guide the eye.
+
+\begin{figure}[!htb]
+  \centering
+  \subfigure[Cross section]{ \label{fig:signal_xsec} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_QStar_log} }
+  \subfigure[Acceptance]{ \label{fig:acc} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_QStar} }
+  \caption{(a) Cross section and (b) acceptance for the 
+  light-flavored \qstar model for 13~\TeV~center-of-mass energies using the full resonance
+  analysis selection (Section~\ref{sec:event_selection}).}
+\end{figure}
+
+\subsubsection{Quantum Black Holes}
+\label{sec:QBH}
+%\todo{Do QBH decay to quarks or gluons, is there increased sensitivity or not} 
+The LHC should be able to produce QBH under the condition that the
+universe contains sufficiently large extra dimensions \cite{RandallMeade}.
+The quantum-gravity energy scale $M_{D}$ at which micro black holes are produced decreases as the number, $n$,
+of these large extra dimensions increases, allowing for lower mass scales at larger $n$.
+
+In the simplest situation, one would expect approximately isotropic decay of these micro black holes via Hawking
+radiation to a many-particle final state. This would require black holes (BH) to be produced substantially
+above their mass threshold in order to have energy for such a decay \cite{Feng:2004}. 
+However, gravitational interactions are also expected at the scale of the new interaction 
+(well below the actual thermal black hole production threshold), at which the dominant final state would be two-body ones.
+Production of these
+states is expected to begin once the $M_D$ energy threshold is reached. 
+This results in a resonance-like production of predominantly
+two-body final states, mainly jets, near $M_D$. The dijet analysis, then, is a way to search for such
+isotropic final states as probes of quantum gravitational effects.
+
+The \BlackMax~\cite{Dai:2007ki} MC generator is used to simulate quantum black holes events with $n=6$. The samples used in the analysis
+are listed in Appendix~\ref{section:MCQBHgSamples}. Cross sections and acceptances for the model are given in figures~\ref{fig:signal_xsec_blackmax} and~\ref{fig:acc_blackmax} respectively.
+
+\begin{figure}[!htb]
+  \centering
+  \subfigure[Cross section]{\label{fig:signal_xsec_blackmax} \includegraphics[width=0.48\textwidth]{figures/benchmark_signals/CrossSections_BlackMax_log}}
+  \subfigure[Acceptance]{  \label{fig:acc_blackmax}\includegraphics[width=0.48\textwidth]{figures/benchmark_signals/Acceptances_BlackMax}}
+  \caption{(a) Cross section and (b) acceptance for the 
+  \BlackMax\ model for 13~\TeV~center-of-mass energies using the full resonance
+  analysis selection (Section~\ref{sec:event_selection}).}
+
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\subsubsection{\Zprime\ models}
+\label{sec:Zprime}
+
+Searches for dijet resonances play an important role in constraining
+possible interactions between dark matter, or a "dark sector," and the
+Standard Model. In this analysis, we consider the pure axial-vector
+leptophobic \Zprime\ model described by the ATLAS-CMS Dark Matter Forum
+Report \cite{Abercrombie:2015wmb}, in the specific scenario outlined in Ref.\cite{Chala:2015ama}, 
+where dijet searches complement mono-jet-like searches in regions of
+parameter space where the decay of the \Zprime\ to invisible particles is
+kinetically suppressed. Regions of the parameter space of this model
+remain which can be probed by dijet resonance searches but LUX, relic
+density constraints, and monojet searches cannot constrain.
+% 
+In this model, the \Zprime\ arises from a simple extension of the Standard
+Model (SM) with an additional $U(1)$ gauge symmetry and a Dirac
+fermion Dark Matter particle that has charges only under this new
+group. Assuming that some SM particles are also charged under this
+group, the \Zprime\ can mediate interactions between the SM and DM. The DM
+particle $\chi$ has a mass $m_{DM}$. The spin-1 \Zprime\ has mass \mMed.
+
+The Dark Matter Forum reports models with vector or axial-vector couplings
+between the spin-1 mediator $\Zprime$ and SM and DM fields, with the corresponding interaction Lagrangians:
+
+\begin{align}
+	\label{eq:AV}
+	\mathcal{L}_{\mathrm{vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\chiDM \\
+	\mathcal{L}_{\mathrm{axial-vector}} &= \gq \sum_{q={u,d,s,c,b,t}}  \Zprime_{\mu} \bar{q}\gamma^{\mu}\gamma^5q + \gDM \Zprime_{\mu} \bar{\chiDM}\gamma^{\mu}\gamma^5\chiDM.
+\end{align}
+
+The parameters in the model are thus
+\begin{equation}
+\left\{~\gq, 
+~ \gDM, 
+~\mDM,
+~\mMed,
+\right\} \,.
+\end{equation}
+
+where ~\gq is the coupling of the \Zprime\ mediator to quarks, ~ \gDM
+is its coupling to the Dark Matter fermion, ~\mDM is the mass
+of the Dark Matter fermion and~\mMed is the \Zprime\ mass. 
+
+The two most relevant parameters of this model in the dijet search are the coupling of the \Zprime\ to quarks
+as it drives the intrinsic width of the resonance, and the \Zprime\ mass. 
+These two parameters are scanned to obtain the signal grid used
+for the limit setting. The Dark Matter mass is fixed at 10 TeV and the coupling to DM to 1.5, with 
+a negligible effect on the resonance width. 
+% 
+The values of $\gq$ and $\mMed$ have been kept consistent with the previous published dijet result.
+The requested $\mMed$ points only go up to 3.5~TeV. This is where the resonance reaches the maximum width
+that this search is sensitive to, without incurring in significant background distortion. 
+For wider signals, it would be necessary to account for interference with the standard model.
+
+The grid of samples produced in full simulation is shown in Table~\ref{tab:ZPrimeScan}.
+
+\begin{table}[!h]
+	\centering
+		\begin{tabular}{| l |r r r r r r r r r r|}
+			\hline
+			\multicolumn{1}{|c|}{\mMed/\gev} & \multicolumn{10}{c|}{\gq} \\
+			\hline
+			1500   	       &         0.1  & 0.2 & 0.3 &  &  &  &  &  &  &  \\
+			2000           &         0.1  & 0.2 & 0.3 & 0.4  &  &  &  &  &  &  \\
+			2500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
+			3000           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
+			3500           &         0.1  & 0.2 & 0.3 & 0.4 & 0.5 &  &  &  &  &  \\
+			\hline
+		\end{tabular}
+%	}
+	\caption{Parameter grid in \gq and \mMed scanned in full simulation with 25 ns configuration.}.
+	\label{tab:ZPrimeScan}
+\end{table}
+ 
+ The acceptances %and cross-sections 
+ for the \Zprime\ samples
+ are shown in Figure~\ref{fig:zprime_acc}.% and \ref{fig:zprime_xsec} respectively. 
+
+ \begin{figure}[!htb]
+   \centering
+   \includegraphics[width=0.45\textwidth]{figures/benchmark_signals/Acceptances_AllZPrime.eps}
+   \caption{Acceptance for the \Zprime\ models 
+   for 13~\TeV~center-of-mass energies using the full resonance
+   analysis selection (Section~\ref{sec:event_selection}).
+   \label{fig:zprime_acc}}
+ \end{figure}
+ 
+\end{comment}
+
+
 %
 %\clearpage
 %\subsubsection{Signal shapes in the various models}
@@ -519,13 +451,13 @@ tune~\cite{ATL-PHYS-PUB-2016-017} over the original hard-scattering event.
 %\end{figure}
 %
 
-\clearpage
+%\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Signal Morphing}
-\label{sec:SwiftMorphing}
+%\subsubsection{Signal Morphing}
+%\label{sec:SwiftMorphing}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\todo[inline] {Will we use morphing?}
+%\todo[inline] {Will we use morphing?}
 
 
 %Smooth signal mass distributions are obtained  from morphing the signal shapes from MC. The MC signals are fit to a Gaussian + reverse Landau function, a parameterization that has one normalization and five shape parameters. The parameters are interpolated as a function of mass using cubic splines. This allows the use of signal shapes at any mass. Figure~\ref{fig:morphing} shows some examples of fits to MC signal shapes as well as several interpolated signal shapes.  

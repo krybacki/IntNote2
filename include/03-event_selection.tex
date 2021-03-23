@@ -36,6 +36,7 @@ sub-leading jet. The value of the \ystar\ cut is optimized to reject
 $t$-channel QCD while admitting the other types of signals.
 
 \subsection{Jet Reconstruction and Calibration}
+\label{sec:jet_reconstruction}
 Jets are reconstructed with the \akt algorithm \cite{Cacciari:2008gp}
 with a distance parameter of 0.4, as implemented in the \textsc{FastJet}
 package~\cite{Cacciari:2011ma}. For these studies, we use jets
@@ -89,14 +90,15 @@ summarized in Table~\ref{tab:jetCalibration}.
 
 
 \subsection{Trigger}
+\label{sec:trigger}
 The data used in this analysis are collected using the lowest
 unprescaled small-R single-jet trigger.  The naming convention of
 single-jet triggers follows either `Jnnn' for L1 triggers or `jnnn' for
 HLT trigger, where 'nnn' is a number specifying the nominal jet \pT
-threshold for the trigger in \GeV\.  The energy scale of the trigger
+threshold for the trigger in \GeV\ .  The energy scale of the trigger
 threshold is the EM scale for L1 triggers, while a calibration sequence
 very close to what is applied to offline jets is applied to HLT jets,
-bringing their scale to the hadronic scale.\\
+bringing their scale to the hadronic scale.
 
 The lowest single jet un-prescaled trigger in 2015 was HLT\_j360, in
 2016 was HLT\_j380, in 2017 was HLT\_j420 (if we ignore one run with
@@ -104,7 +106,7 @@ luminosity around 2\,\ipb ) and in 2018 was also HLT\_j420. So to keep
 the selection consistent across years, the kinetic requirement derived
 for HLT\_j420 is used for the analysis. In addition to this,
 HLT\_j225\_gsc420\_boffperf\_split is also unprescaled for all data
-taking and also considered for the trigger studies for the analysis. \\
+taking and also considered for the trigger studies for the analysis.
 
 For the complete \RunTwo dataset, the two single-jet unprescaled
 triggers for all data taking are: HLT\_j420 and
@@ -114,26 +116,48 @@ $\pT > 420 \GeV$, while the HLT\_j225\_gsc420\_boffperf\_split trigger
 also applies the offline global sequential calibration (GSC) to improve
 the trigger turn-on.\\
 
-The trigger turn-on was investigated in Ref.~\cite{Nishu:2646455}
-finding that  obtaining the turn-on directly from \mjj\ provides a much
+The two triggers were found to be very similar in
+performance in Ref.~\cite{Nishu:2646455}, which finally used HLT\_j420 trigger.
+It was also found in Ref.~\cite{Nishu:2646455} that obtaining the turn-on directly from \mjj\ provides a much
 lower turn-on than from requiring a specific cut on the leading jet \pT.
-As such, the analysis does not require an explicit cut on the \pT\ of
-either the leading or subleading jet. In practice, the invariant mass
-cut imposes a soft cut of 420~\GeV on the leading jet, and 150~\GeV on
-the subleading jet. The two triggers are very similar in performance,
-and having one over another does not change our lower \mjj\ threshold
-from the binning.
-
-
 In order not to sculpt the \mjj\ distribution in an odd way due to
-different triggers and given the assessment of the turn-on, the analysis
-uses the HLT\_j420 trigger with no cut on the leading jet \pT.
+different triggers and given the assessment of the turn-on, this analysis also
+uses the HLT\_j420 trigger with no explicit cut on the leading jet \pT.
+In practice, the invariant mass cut imposes a soft cut of 380~\GeV on 
+the leading jet, and 150~\GeV on the subleading jet. 
 
-%%Dengfeng Add
+\subsection{Baseline selection}
+\label{sec:base_selection}
+The baseline event selection is applied for all signal regions and
+the cuts applied are:
+\begin{itemize}
+\item Good Run List (GRL): Requirement that all relevant detectors were in a good state ready for physics. The GRLs used for this analysis are:
+        \begin{itemize}
+                %\item 2015(3.2\,\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\,\_25ns.xml
+                %\item 2016(32.97\,\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns.xml
+                %\item 2017(44.31\,\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_ \newline PHYS\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
+                %\item 2018(59.94\,\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\_ \newline StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
+                \item 2015(3.2\,\ifb): data15\_13TeV.periodAllYear\_DetStatus-v89-pro21-02\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns.xml
+                \item 2016(33\,\ifb): data16\_13TeV.periodAllYear\_DetStatus-v89-pro21-01\_DQDefects-00-02-04\_PHYS\\\_StandardGRL\_All\_Good\_25ns.xml
+                \item 2017(44.2\,\ifb): data17\_13TeV.periodAllYear\_DetStatus-v99-pro22-01\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns\_JetHLT\_Normal2017.xml
+                \item 2018(58.5\,\ifb): data18\_13TeV.periodAllYear\_DetStatus-v102-pro22-04\_Unknown\_PHYS\\\_StandardGRL\_All\_Good\_25ns\_Triggerno17e33prim.xml
+        \end{itemize}
+\item LAr: Liquid Argon Calorimeter error rejected ( errorState(xAOD::EventInfo::LAr) )
+\item Tile: Tile Calorimeter error rejected ( errorState(xAOD::EventInfo::Tile) )
+\item SCT: SCT single event upsets rejected ( errorState(xAOD::EventInfo::SCT) )
+\item Core: Incomplete event build rejected ( isEventFlagBitSet(xAOD::EventInfo::Core, 18) )
+\item All jets with $\pt\ge 150\,\GeV$ pass LooseBad cleaning cuts
+\item Primary Vertex: the highest $\sum\pt^{2}(trk)$ (xAOD::VxType::VertexType::PriVtx) vertex has at least two tracks associated with it
+\item Trigger: Passes the lowest unprescaled single-jet trigger, HLT\_j420
+\item Jet preselecton: Leading jet $\pt\ge 380\,\GeV$ and Jet multiplicity $\ge 2$
+\item $|\Delta\phi|$ between 2 jets: $|\Delta\phi| > 1.0$
+\end{itemize}
 
+Additional kinematic selection criteria are used for various search distributions separately to optimize the
+search potential, which are then discussed in Section~\ref{section:ystarCutOptimization}.
 
-\subsection{Basic kinematic plots}
-\label{sec:kinematic_distributions}
+%\subsection{Basic kinematic plots}
+%\label{sec:kinematic_distributions}
 
 %In this section a selection of kinematic and monitoring plots produced with the resonant selection on the full dataset is shown 
 %(Figures~\ref{fig:monitoring1}, %\ref{fig:monitoring2}, \ref{fig:monitoring3}, 
@@ -373,7 +397,7 @@ uses the HLT\_j420 trigger with no cut on the leading jet \pT.
 %
 %\clearpage
 
-
+\begin{comment}
 \subsection{Analysis cutflow}
 %\label{sec:data_cutflow}
 
@@ -422,4 +446,4 @@ Run-2 data are presented in Tables~\ref{tab:cutFlow_resonance_run2} and
 		events with string resonance cuts:  $\mjj>1133~\GeV$, and $|\ystar|<0.8$. .
 		\label{tab:cutFlow_wstar_run2} }
 \end{table}
-
+\end{comment}
