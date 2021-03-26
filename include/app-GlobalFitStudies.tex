@@ -1,6 +1,7 @@
 \section{Global Fit Studies}
 \label{sec:globalFitStudies}
 \subsection{Bin Rescaling}
+\label{subsec:binRescaling_GlobalFitting}
 The dijet fit functions used are based upon motivation from parton distribution functions $\left(1-\frac{m_{jj}}{\sqrt{S}}\right)^{P_{1}}$ and LO matrix element from QCD dijet MC $\frac{m_{jj}}{\sqrt{S}}^{P_{2}}$ with additional ad-hoc terms determined empirically to account for higher orders \cite{ATL-COM-PHYS-2018-161}, and ensuring that the function is smooth and monotonically decreasing. 
 
 If the underlying data follows this distribution, variable binning will introduce an artificial deviation in the measured data away from this distribution. Shown in Figure \ref{fig:BinningShapeAdjustment} using events selected from the string resonance cuts, is a ratio between the measured data in events per bin basis and the measured data in events / GeV per bin by dividing by bin width, normalized to be equal in the 7904-8055 GeV bin for comparison. It can be seen that the variable binning introduces a change in shape as expected particularly affecting the low $m_{jj}$ region, and as well as this there are noticeable unsmooth jumps in the distribution coming from the raw events per bin case due to requirements of integer bin widths. Due to this change in shape and unsmooth jumps, to reliably fit the dijet fit functions to data it is required to correct for this, either by using non-variable binning for fits or by a bin rescaling procedure:
@@ -41,6 +42,7 @@ Shown in Figure \ref{fig:5ParamGlobalFitBinRescaleComparison} is a comparison fo
 \end{figure}
 
 \subsection{Fit Statistical Uncertainty}
+\label{subsec:fitStatUnc_GlobalFitting}
 
 To estimate the $1\sigma$ statistical uncertainty upon the fit, a pseudo-experiment method is used, which has been used in many other analyses including the previous dijet analysis \cite{ATL-COM-PHYS-2018-1538}.
 
@@ -60,6 +62,7 @@ The statistical uncertainty on the 5 parameter dijet fit function globally fitte
 \end{figure}
 
 \subsection{Choice of Minimizer}
+\label{subsec:MinimizerChoice_GlobalFitting}
 The MINUIT2 minimizer is used as standard, the statistical uncertainty of the 5 parameter dijet fit function globally fitted on data with string resonance cuts obtained with MINUIT2 in comparison to MINUIT is shown in Figure \ref{fig:5ParamMINUITComparison}, showing that MINUIT has a statistical uncertainty $ < $ 9\% up to 8 TeV, $\approx$ 3\% larger at 8 TeV than the MINUIT2 case.
 
 \begin{figure}
@@ -71,6 +74,7 @@ The MINUIT2 minimizer is used as standard, the statistical uncertainty of the 5 
 
 
 \subsection{SWiFt Vs Global Fitting}
+\label{subsec:SWiFtVsGlobal_GlobalFitting}
 
 The statistical uncertainty found on the fit using SWiFt instead of global fitting is shown in Figure \ref{fig:SWiFtStatisticalUncertaintyYstar0.8}, with a statistical uncertainty of $ < $ 44\% up to 8 TeV, $\approx$ 38\% larger at 8 TeV than the global fitting case. Due to this increased statistical uncertainty and also due to the inherent simplicity of global fits allowing easier reinterpretation by theorists, using the global fit rather than SWiFt fit is motivated.
 
@@ -82,6 +86,7 @@ The statistical uncertainty found on the fit using SWiFt instead of global fitti
 \end{figure}
 
 \subsubsection{Bump Hunter}
+\label{subsubsec:BH_GlobalFitting}
 
 The significance per bin was calculated using BumpHunter both using SWiFt and global fitting for string resonance cuts to inclusive $|y*|<0.8$ data in Figure \ref{fig:ystar0.8FullRunBHFits}, the BumpHunter p-value for these is shown in Figure \ref{fig:ystar0.8FullRunBHPvalue}, showing both SWiFt and global fitting produce consistent significance plots and p-values for this region (0.93 vs 0.90 respectively).
 
