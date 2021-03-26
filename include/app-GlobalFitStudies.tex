@@ -16,7 +16,7 @@ If the underlying data follows this distribution, variable binning will introduc
 Shown in Figure \ref{fig:5ParamGlobalFitBinRescaleComparison} is a comparison for the 5 parameter dijet function globally fitted using MINUIT2 to the measured events per bin, and with performing the bin rescaling procedure. The measured $\frac{\chi^{2}}{nDoF}$ of the fit is improved via this bin rescaling procedure by a factor of 20 from 1617/80 to 63.4/80, and in addition it can be seen by eye that without performing this procedure the fit underestimates almost all bins above 5 TeV, while this does not occur when the bin rescaling procedure is applied. Comparisons for additional fit functions and different fitting ranges are available in {\href{https://indico.cern.ch/event/997813/contributions/4191921/attachments/2178521/3679266/dijet_CompareBinRescale_26_01_2021.pdf}{https://indico.cern.ch/event/997813/contributions/4191921/}}.
 
 
-%\begin{figure}
+\begin{figure}
     \centering
     \includegraphics[trim=3 8 35 48, clip,width=1.0\linewidth]{figures/app-GlobalFitStudies/BinningShapeAdjustment.pdf}
     \caption{Scaling per bin between a distribution rescaled by bin width to produce a plot of Events / GeV in each bin and a plot of raw events. The raw events case is scaled down by 151 to make it equal to Events / GeV in the 7904-8055 GeV bin for comparison. It can be seen that rescaling by bin width introduces a change in shape affecting the lower $m_{jj}$ region more, and there are noticeable unsmooth jumps in the shape particularly at low $m_{jj}$ which is due to the requirement of integer bin widths.}
