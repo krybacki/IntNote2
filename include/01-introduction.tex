@@ -7,20 +7,19 @@ quarks and gluons, creating two hadronic jets in the detector.
 In the SM, dijet events are produced mainly by quantum chromodynamics
 (QCD) processes. 
 QCD predicts dijet events with a smoothly decreasing invariant mass
-distribution, \mjj. 
+distribution \mjj. 
 A new particle decaying into quarks or gluons could appears instead as
-a resonance in the \mjj spectrum.  
+a resonance in the \mjj\ spectrum.  
 
 A search for new physics in the dijet mass distribution was performed
-using $\sqrt{s} = 13$~\TeV\xspace data collected between years 2015 and
-2018 \cite{Aad:2019hjw}. 
-%with the  95\% CL lower limits on the masses given in Table~\ref{tab:Limits2018}. 
+using $\sqrt{s} = 13$~\TeV\ data collected between years 2015 and
+2018~ \cite{EXOT-2019-03}. 
 Most of the strategies and methods of the analysis presented here are
 mostly unchanged with respect to the previous iterations of the
-analysis, which can be reviewed in great detail in the internal note
-~\cite{Nishu:2646455}. 
+analysis, which can be reviewed in great detail in the internal
+note~\cite{Nishu:2646455}.
 
-\todo[inline]{To write about updated statistical framework.} 
+%\todo[inline]{To write about updated statistical framework.} 
 
 %For these reasons, searches in dijet events are often amongst of the first searches done when a hadron
 %collider reaches a new energy frontier\footnote{See Ref.~\cite{Harris:2011bh} for a review of the history
@@ -53,67 +52,69 @@ analysis, which can be reviewed in great detail in the internal note
 If the resonant data sample can be divided based on the type of
 parton that initiated the jets, the sensitivity of the search for some
 rescounaces could be increased. 
-The fraction of events as a function of  
-the dijet mass from QCD  simulated with a  \textsc{Pythia~8.186}~\cite{pythia8} and the leading-order NNPDF2.3~\cite{Ball:2012cx} 
-parton distribution functions (PDFs) is shown in Fig.~\ref{fig:quarkgluonfraction}. 
-This suggests that tagging quark and gluon jets should be able to improve the sensitivity of searches for new particles. 
-ATLAS has published a study \cite{ATL-PHYS-PUB-2017-009} showing that jets can be tagged as quark or gluon jets 
-based on the number of charged particles with transverse momentum (\pt ) above 500\,MeV. 
+%The fraction of events as a function of  
+%the dijet mass from QCD  simulated with a  \textsc{Pythia~8.186}~\cite{pythia8} and the leading-%order NNPDF2.3~\cite{Ball:2012cx} 
+%parton distribution functions (PDFs) is shown in Fig.~\ref{fig:quarkgluonfraction}. 
+This suggests that tagging quark and gluon jets should be able to
+improve the sensitivity of searches for new particles.
+ATLAS has published a study \cite{ATL-PHYS-PUB-2017-009} showing that
+jets can be tagged as quark or gluon jets based on the number of
+charged particles with transverse momentum (\pt ) above 500\,MeV.  
 In this note we present the analysis for the whole combined 2015 and
-2016 $\sqrt{s} = 13$~\TeV\xspace dataset using quark 
-and gluon tagging  based on charged-particle constituent multiplicity.
+2016 $\sqrt{s} = 13$~\TeV\ dataset using quark and gluon tagging
+based on charged-particle constituent multiplicity. 
 
-\todo[inline]{Update Fig 1 with dijet fractions nicer plot...}
-\begin{figure}[htb]
- \centering
-\includegraphics[width=0.75\textwidth]{figures/introduction/truthCompositionRatio.pdf}
-\caption{The fraction of dijet events that are initiated by quark-quark events (blue), quark-gluon 
-events (green) and gluon-gluon events (red) in simulated data.  \label{fig:quarkgluonfraction}}
-\end{figure}
+%\todo[inline]{Update Fig 1 with dijet fractions nicer plot...}
+%\begin{figure}[htb]
+% \centering
+%\includegraphics[width=0.75\textwidth]{figures/introduction/truthCompositionRatio.pdf}
+%\caption{The fraction of dijet events that are initiated by quark-quark events (blue), quark-glu%on 
+%events (green) and gluon-gluon events (red) in simulated data.  \label{fig:quarkgluonfraction}}
+%\end{figure}
 
-\subsection{Overview of the analysis}
-\label{sec:overview}
+%\subsection{Overview of the analysis}
+%\label{sec:overview}
 
-First, we demonstrate using toy MCs that tagging quark and gluon jets can, in principle, make significant 
-improvements to the sensitivity of the resonance search.
+%First, we demonstrate using toy MCs that tagging quark and gluon jets can, in principle, make si%gnificant 
+%improvements to the sensitivity of the resonance search.
 
-The subsequent analysis of the data will follow previously used in the inclusive analysis of the full Run-2 data 
-\cite{EXOT-2016-21,Nishu:2646455}. This is reproduced here for convinience. 
+%The subsequent analysis of the data will follow previously used in the inclusive analysis of the% full Run-2 data 
+%\cite{EXOT-2016-21,Nishu:2646455}. This is reproduced here for convinience. 
 
-We analyze dijet events using the dijet invariant mass \mjj\  (described in Section \ref{sec:observables}).
+%We analyze dijet events using the dijet invariant mass \mjj\  (described in Section \ref{sec:obs%ervables}).
 
-The initial analysis steps are
+%The initial analysis steps are
 
-\begin{enumerate}
-\item Unprescaled single-jet triggers are used to collect events containing
-highly energetic jets (Section~\ref{sec:trigger})
-\item High-\pT\xspace jets are reconstructed, identified, and calibrated according to recommendations, with techniques
-prepared in tandem between the analysis team and the
-JetEtMiss group (Section~\ref{sec:jet_reconstruction}).
-\item After calibration, bulk processing of the data, and production of a standardized xAOD derivation, events are selected with very similar kinematic 
-criteria as in previous dijet searches (Section~\ref{sec:base_selection}). The data and Monte Carlo used are described in
-Appendices~\ref{sec:datasample} and ~\ref{sec:qcdsample}. Prior to the availability of the data in the final
-analysis, analyzers closely monitor the on-line and offline data preparation and
-quality efforts for advance warning of problems.%(Appendix~\ref{app:dqchecks}).
-\item When the data are available for inclusion in the analysis, the jet kinematics, calibration performance, 
-and quality are monitored at the analysis level (Table~\ref{tab:jetCalibration} in Section~\ref{sec:event_selection}).
-\end{enumerate}
+%\begin{enumerate}
+%\item Unprescaled single-jet triggers are used to collect events containing
+%highly energetic jets (Section~\ref{sec:trigger})
+%\item High-\pT\xspace jets are reconstructed, identified, and calibrated according to recommenda%tions, with techniques
+%prepared in tandem between the analysis team and the
+%JetEtMiss group (Section~\ref{sec:jet_reconstruction}).
+%\item After calibration, bulk processing of the data, and production of a standardized xAOD deri%vation, events are selected with very similar kinematic 
+%criteria as in previous dijet searches (Section~\ref{sec:base_selection}). The data and Monte Ca%rlo used are described in
+%Appendices~\ref{sec:datasample} and ~\ref{sec:qcdsample}. Prior to the availability of the data %in the final
+%analysis, analyzers closely monitor the on-line and offline data preparation and
+%quality efforts for advance warning of problems.%(Appendix~\ref{app:dqchecks}).
+%\item When the data are available for inclusion in the analysis, the jet kinematics, calibration% performance, 
+%and quality are monitored at the analysis level (Table~\ref{tab:jetCalibration} in Section~\ref{%sec:event_selection}).
+%\end{enumerate}
 
-Statistical tests are employed in a
-\textit{search phase}, will be added to the Section~\ref{sec:statistical_framework}, to determine whether the 
-data are compatible with a background expectation. 
-A localized excess (i.e. a bump) on the smooth \mjj\  distribution
-is the target of the resonance analysis.
-The background model is derived from a fit to the \mjj\ distribution.
+%Statistical tests are employed in a
+%\textit{search phase}, will be added to the Section~\ref{sec:statistical_framework}, to determin%e whether the 
+%data are compatible with a background expectation. 
+%A localized excess (i.e. a bump) on the smooth \mjj\  distribution
+%is the target of the resonance analysis.
+%The background model is derived from a fit to the \mjj\ distribution.
 %The background estimation strategy is described in Section~\ref{sec:background_estimation}.
-A description of systematic uncertainties will be added to 
-Sections~\ref{sec:systematic_uncertainties}. 
+%A description of systematic uncertainties will be added to 
+%Sections~\ref{sec:systematic_uncertainties}. 
 %In case either method observes a significant excess, additional tests in the search phase
 %are detailed in Section~\ref{sec:cross_checks}. 
 %The results of the search phase will be shown in Section~\ref{sec:search_results}.
 
-If no new phenomena is found, a ~\textit{limit setting phase} is used
-to constrain a set of signals. 
+%If no new phenomena is found, a ~\textit{limit setting phase} is used
+%to constrain a set of signals. 
 %\begin{itemize}
 % \item Limits on benchmark signals:
 %\begin{itemize}
@@ -129,23 +130,23 @@ to constrain a set of signals.
 %Each of the following sections clarifies what is consistent
 %with the previous iteration and what has been further developed.
 
-\subsection{Strategy for applying quark-gluon selection to the full Run-2 data.}
-\label{sec:2018data}
+%\subsection{Strategy for applying quark-gluon selection to the full Run-2 data.}
+%\label{sec:2018data}
 
-The analysis strategy, cuts, and other details were developed and implemented in previous analyses \cite{Aad:2019hjw,Nishu:2646455}.  
-The search and limit setting using quark-gluon tagging will take place after the selection criteria 
-have been optimised and the expected sensitivity calculated.
+%The analysis strategy, cuts, and other details were developed and implemented in previous analys%es \cite{Aad:2019hjw,Nishu:2646455}.  
+%The search and limit setting using quark-gluon tagging will take place after the selection crite%ria 
+%have been optimised and the expected sensitivity calculated.
 
-When all the quality checks on the subsamples (see Section~\ref{sec:jet_reconstruction})
-show physical behaviour, are smooth, and in general agreement
-with the simulation we will proceed with the search.
-Where appropriate we take the
-JES uncertainty into account in our assessment of the agreement
-between data and simulation. 
-Pythia is only a LO generator
-and we are probing a region where the PDF fits do not
-have a lot of information so some difference in the shapes
-can exist. Therefore we do not put a strict statistical measure
-on the compatibility of the kinematic distributions but rather
-look for any local features indicative of operational or
-calibration issues or non-physical behaviour.
+%When all the quality checks on the subsamples (see Section~\ref{sec:jet_reconstruction})
+%show physical behaviour, are smooth, and in general agreement
+%with the simulation we will proceed with the search.
+%Where appropriate we take the
+%JES uncertainty into account in our assessment of the agreement
+%between data and simulation. 
+%Pythia is only a LO generator
+%and we are probing a region where the PDF fits do not
+%have a lot of information so some difference in the shapes
+%can exist. Therefore we do not put a strict statistical measure
+%on the compatibility of the kinematic distributions but rather
+%look for any local features indicative of operational or
+%calibration issues or non-physical behaviour.
