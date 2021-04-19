@@ -5,11 +5,11 @@
 % https://tex.stackexchange.com/questions/322010/pdflatex-glyph-undefined-symbols-disappear-from-included-pdf
 %-------------------------------------------------------------------------------
 % Specify where ATLAS LaTeX style files can be found.
-\newcommand*{\ATLASLATEXPATH}{latex/}
+\RequirePackage{latex/atlaslatexpath}
 % Use this variant if the files are in a central location, e.g. $HOME/texmf.
 % \newcommand*{\ATLASLATEXPATH}{}
 %-------------------------------------------------------------------------------
-\documentclass[NOTE, atlasdraft=true, texlive=2016, UKenglish]{\ATLASLATEXPATH atlasdoc}
+\documentclass[NOTE, atlasdraft=true, texlive=2016, UKenglish]{atlasdoc}
 % The language of the document must be set: usually UKenglish or USenglish.
 % british and american also work!
 % Commonly used options:
@@ -29,7 +29,7 @@
 
 %-------------------------------------------------------------------------------
 % Extra packages:
-\usepackage[subfigure]{\ATLASLATEXPATH atlaspackage}
+\usepackage[subfigure]{atlaspackage}
 % Commonly used options:
 %  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography.
 %  backend=bibtex        Use the bibtex backend rather than biber.
@@ -42,15 +42,16 @@
 \usepackage{rotating}
 \usepackage{todonotes} % Add '[disable]' option to mask them
 \usepackage{xcolor}
+\usepackage{verbatim}
 %-------------------------------------------------------------------------------
 % Style file with biblatex options for ATLAS documents.
-\usepackage{\ATLASLATEXPATH atlasbiblatex}
+\usepackage{atlasbiblatex}
 
 % Package for creating list of authors and contributors to the analysis.
-\usepackage{\ATLASLATEXPATH atlascontribute}
+\usepackage{atlascontribute}
 
 % Useful macros
-\usepackage{\ATLASLATEXPATH atlasphysics}
+\usepackage{atlasphysics}
 % See doc/atlas_physics.pdf for a list of the defined symbols.
 % Default options are:
 %   true:  journal, misc, particle, unit, xref
@@ -91,44 +92,61 @@
 
 % List of contributors - print here or after the Bibliography.
 %\PrintAtlasContribute{0.30}
-%\clearpage
+\clearpage
 
 %-------------------------------------------------------------------------------
 \section{Introduction}
 \label{sec:intro}
-\input{include/introduction.tex}
+\input{include/01-introduction.tex}
+\clearpage
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Executive Summary}
+\label{sec:executive}
+\input{include/00-executive.tex}
 \clearpage
 %-------------------------------------------------------------------------------
 
 %-------------------------------------------------------------------------------
 \section{Benchmark Models and Datasets}
 \label{sec:benchmark_signals}
-\input{include/benchmark_signals.tex}
+\input{include/02-benchmark_signals.tex}
 \clearpage
 %-------------------------------------------------------------------------------
 
 \section{Event selection}
 \label{sec:event_selection}
-\input{include/event_selection.tex}
+\input{include/03-event_selection.tex}
 \clearpage
 
 
 %-------------------------------------------------------------------------------
 \section{``Quark-Gluon'' Sample Selection}
 \label{sec:QGselection}
-\input{include/QGselection.tex}
+\input{include/04-QGselection.tex}
 \clearpage
 %-------------------------------------------------------------------------------
 
-\section{Background Estimation Strategy}
-%\label{sec:background_estimation}
-\input{include/04-BackgroundEstimation.tex}
+\section{Sample Optimisation}
+\label{sec:Optimisation}
+\input{include/05-Optimisation.tex}
 \clearpage
 
-\section{Search Strategy}
+
+
+\section{Statistical Framework}
+\label{sec:statistical_framework}
+
+%\section{Background Estimation Strategy}
+%\label{sec:background_estimation}
+%\input{include/04-BackgroundEstimation.tex}
+%\clearpage
+
+%\section{Search Strategy}
 %\label{sec:search_strategy}
-\input{include/06-SearchStrategy.tex}
-\clearpage
+%\input{include/06-SearchStrategy.tex}
+%\clearpage
 %
 % %-------------------------------------------------------------------------------
 % %%SYSTEMATICS
@@ -153,7 +171,7 @@
 
 %-------------------------------------------------------------------------------
 \section{``Quark-Gluon'' Resonance Search Sensitivity}
-\label{sec:QGselection}
+\label{sec:QGsensitivity}
 \input{include/QGsensitivity.tex}
 %\clearpage
 %-------------------------------------------------------------------------------
