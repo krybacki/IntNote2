@@ -52,7 +52,7 @@ agreement with the distribution of \ntrk\ found in data.
 \label{sec:ExpectedSig}
 
 The dijet mass spectrum has a complex background with rapidly changing  fractions of events that originate 
-from quark-quark, quark-gluon and gluon-gluon. The expected signal significance has been investigated using 
+from quark-quark, quark-gluon and gluon-gluon scattering. The expected signal significance has been investigated using 
 MC simulated  signals and background. The background is represented using the \QCD samples described 
 in Section~\ref{qcdsamps}. 
 
@@ -334,36 +334,57 @@ selection efficiencies in each \pT\ bin along with the best fit to Eq.~\ref{eq:n
 
 
 The selection criteria for a single jet gluon selection efficiency of 75\% is applied to the \Hprime\ 
-sample described in in section~\ref{sec:hprime} are given in Table~\ref{table:HprimeselctionEfficiency}. If the selection works perfectly the expected selection efficiency for the \Hprime\ sample would be 56.3\% ($0.75^2$). The actual selection efficiencies range between 51.9\% for a 2\,\TeV\ signal to 57.4\% for a 7\,\TeV\ signal. 
+sample described in in section~\ref{sec:hprime} are given in Table~\ref{table:HprimeselctionEfficiency}. 
+If the selection works perfectly the expected selection efficiency for the \Hprime\ sample would be 56.3\% ($0.75^2$). 
+The actual selection efficiencies range between 51.9\% for a 2\,\TeV\ signal to 57.4\% for a 7\,\TeV\ signal. 
+
+The actual fraction of \Hprime\ events that decay to two gluons is less than 100\% due to gluon splitting and other showering 
+effects and ranges from 91.3 to 95.4\%. The variation between the expected efficiency (56.3\% of the truth efficiency) 
+is plotted in Fig.~\ref{fig:HPrime_efficiency_difference}. The average difference for is approximately 3.3\% for both selection criteria.
+
+There is negligible difference between the two selection criteria so the simpler choice as given in Eq.~\ref{eq:nqg2} will be used.
+
 
 
 \begin{table}[h]
 	\centering 
 		\caption{ The signal selection efficiency for a fully simulated \Hprime\ decaying to two gluons with requiring two jets to 
-		pass the 75\% single jet criteria given in Eq.~\ref{eq:nqg3} with constants from 
-		Table~\ref{table:truthGluonSelectionEfficiencies}.  The expected double tagged gluon efficiency is 56.3\%. 
+		pass the 75\% single jet criteria given in Eq.~\ref{eq:nqg2} with constants from 
+		Table~\ref{table:truthGluonSelectionEfficiencies} and the criteria given in Eq.~\ref{eq:nqg3} with constants from 
+		Table~\ref{table:truthGluonSelectionEfficiencies2}.  
+		The expected double tagged gluon efficiency is 56.3\%. 
 		\label{table:HprimeselctionEfficiency}
 		}
-	\begin{tabular}{SS}
+	\begin{tabular}{SSSS}
 	\toprule
-\multicolumn{1}{c}{\Hprime\ Mass (\GeV)}   & \multicolumn{1}{c}{Selection efficiency(\%)} \\
+\multicolumn{1}{c}{\Hprime\ Mass (\GeV)}   & \multicolumn{3}{c}{Selection efficiency(\%)} \\
+\multicolumn{1}{c}{} & \multicolumn{1}{c}{Eq.~\ref{eq:nqg2}} & \multicolumn{1}{c}{Eq.~\ref{eq:nqg3} ($\sqrt{}$ term)} 
+& \multicolumn{1}{c}{Truth} \\
 \midrule 
-2000	&	51.9 \\
-2500	&	53.2 \\
-3000 	&	54.9 \\
-3500	&	55.3 \\
-4000	&	56.4 \\
-4500	&	56.7 \\
-5000	&	56.2 \\
-5500	&	57.2 \\
-6000	&	57.4 \\
-6500	&	57.4 \\
-7000	&	57.4 \\
-\bottomrule
+2000	&	51.9 & 51.8& 91.3 \\
+2500	&	53.2 & 53.0& 91.7 \\
+3000 	&	54.9 & 54.6& 92.3 \\
+3500	&	55.3 & 55.1& 93.4 \\
+4000	&	56.4 & 56.2& 93.4 \\
+4500	&	56.7 & 56.7& 94.1 \\
+5000	&	56.2 & 56.4& 94.3 \\
+5500	&	57.2 & 57.5& 94.9 \\
+6000	&	57.4 & 57.8& 95.1 \\
+6500	&	57.4 & 58.3& 95.5 \\
+7000	&	57.4 & 58.1& 95.4 \\\bottomrule
 \end{tabular}
 \end{table}
 
 
+\begin{figure}[p]
+ \centering
+ {\includegraphics[width=0.60\textwidth]{figures/tagging/HPrime_Efficiency_Difference}}
+
+\caption{ The difference between the expected signal selection efficiency of 56.3\%
+for a single ject selection efficiency of 75\% for \Hprime\ using  Eq.~\ref{eq:nqg2} (Blue) and
+Eq.~\ref{eq:nqg3} (Green)
+ \label{fig:HPrime_efficiency_difference}}
+\end{figure}
 
 
 
