@@ -1,7 +1,7 @@
 \subsection{\ystar\ cut Optimization}
 \label{section:ystarCutOptimization}
 
-\todo[inline]{ Clean up formulae. }
+%\todo[inline]{ Clean up formulae. }
 
 In QCD two-to-two scattering, $t$-channel is dominant. The QCD dijet production is proportional to 
 $\displaystyle{(1-\cos\theta^{*})^{-2}}$, while $H^\prime$ and String production is expected to be flat in 
@@ -11,7 +11,7 @@ and String will peak at 0.
 
 The significance is given by 
 \begin{equation}
-\label{eq:signifcanceYstar}
+%\label{eq:signifcanceYstar} % uncomment if label used.
 S  = \sqrt{\sum_{i}{2\left[ \left(S_{i}+B_{i} \right)\cdot \ln \left(1+\frac{S_{i}}{B_{i}}\right)-S_{i}\right]}}
 \end{equation}
 where $S_i$ ($B_i$) is the number of signal (background) events in bin $i$. 
@@ -37,7 +37,7 @@ $|\ystar| < 0.6$. Figure \ref{fig: string significance as a function of y* cut} 
 \end{figure}
 
 \subsection{dijet mass turn-on}
-\label{section: dijet mass turn-on}
+%\label{section: dijet mass turn-on} % uncomment if label used.
 
 The lowest single jet un-prescaled trigger in 2015 was HLT\_j360, in 2016 was HLT\_j380,
 in 2017 and 2018 is HLT\_j420 which is available in full Run 2 data.
@@ -101,7 +101,63 @@ are weighted events normalised to the luminosity corresponding to each subcampai
 
 
 \subsection{Basic kinematic plots}
-\label{sec:kinematic_distributions}
+%\label{sec:kinematic_distributions} % uncomment if label used.
+
+\subsection{Gluon-Gluon Data Selection}
+
+In this section a selection of kinematic and monitoring plots produced with the gluon-gluon sample selection on the full dataset is shown 
+(Figures~\ref{fig:GGmonitoring1}, \ref{fig:GGmonitoring2}, \ref{fig:GGmonitoring3}. 
+
+
+\begin{figure}[htb]
+ \centering
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_HT_logY_v01.pdf}}
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_NPV_logy_v01.pdf}}
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_averageInteractionsPerCrossing_logY_v01.pdf}}
+  \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_njets_logy_v01.pdf}}
+ \caption{Monitoring plots on %2016 data, 
+ the gluon-gluon sample. (a) $H_T$, %(b) $MH_T$ (missing transverse momentum calculated only from the jets in the event), 
+ (b) number of primary interaction vertices,
+ (c) average interactions per bunch crossing, and 
+ (d) number of jets.}
+ \label{fig:GGmonitoring1}
+\end{figure}
+
+ \begin{figure}[htb]
+ \centering
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_deltaPhi_logY_v01.pdf}}
+ %
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_jet_eta_logY_v01.pdf}}
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_jet_phi_logY_v01.pdf}}
+ %
+  \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_jet_rapidity_logY_v01.pdf}}
+ %
+  \caption{Monitoring plots on  the gluon-gluon sample. 
+  (a) $\Delta\phi$ between the two jets,
+  (b) jet $\eta$,
+  (c) jet $\phi$, and 
+  (d)  jet rapidity.  %Fluctuations in the jet $phi$ distribution are attributable to dead modules in the tile calorimeter which lead to fewer jets in small slices of the detector.
+  }
+ \label{fig:GGmonitoring2}
+\end{figure}
+
+
+ \begin{figure}[htb]
+ \centering
+ %
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_jet_pt_logY_v01.pdf}}
+
+
+ %
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_yBoost_logY_v01.pdf}}
+ \subfigure[] {\includegraphics[width=0.45\textwidth]{figures/monitoring/GG/newStudy_yStar_logY_v01.pdf}}
+ \caption{Monitoring plots on  the gluon-gluon sample.
+ (a) jet \pt,
+  (b) \yB{}, and
+  (c) \ystar{}. }
+ \label{fig:GGmonitoring3}
+\end{figure}
+
 
 \clearpage
 
