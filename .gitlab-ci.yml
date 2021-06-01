@@ -16,7 +16,7 @@ image: gitlab-registry.cern.ch/atlas-physics-office/gitlab-integration/pogitlab
 # -- VARIABLES --
 variables:
   DOCNAME: ANA-EXOT-2019-32-INT1
-  MAND_TAG: "5.0.5"
+  MAND_TAG: 6.0.0
   FROZEN: newest
   IMAGE_POTL: gitlab-registry.cern.ch/atlas-physics-office/gitlab-integration/potl-2016
   JOBS_SCRIPTS_PATH: "/usr/share/scripts"
