@@ -41,7 +41,7 @@ while getopts shkcd opt; do
 done
 
 # Check we are in the right directory
-DIR=$(basename "${PWD}")
+DIR=$(basename ${PWD})
 if [ -e ${DIR}.tex ]; then
     echo "We are in directory ${PWD}"
 else
@@ -113,11 +113,11 @@ for lfile in scripts/atlaslatex_update.sh scripts/atlaslatex_2020.sh; do
         echo "+++ ${lfile} updated. You should now run ${lfile}"
     fi
 done
-#if [ $scriptupdate -eq 1 ]; then
-#    # Remove temporary directory
-#    rm -rf tmp-atlaslatex
-#    exit 1
-#fi
+if [ $scriptupdate -eq 1 ]; then
+    # Remove temporary directory
+    rm -rf tmp-atlaslatex
+    exit 1
+fi
 
 # Class and style files
 for lfile in latex/*.cls latex/*.sty; do
