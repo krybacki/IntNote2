@@ -38,7 +38,7 @@ TWIKI    = https://twiki.cern.ch/twiki/bin/view/AtlasProtected/PubComLaTeXFAQ
 
 #-------------------------------------------------------------------------------
 # The main document filename
-BASENAME = mydocument
+BASENAME = ANA-EXOT-2019-32-INT1
 
 #-------------------------------------------------------------------------------
 # Adjust this according to your top-level figures directory
