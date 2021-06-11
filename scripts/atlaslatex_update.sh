@@ -42,13 +42,13 @@ done
 
 # Check we are in the right directory
 DIR=$(basename ${PWD})
-if [ -e ${DIR}.tex ]; then
-    echo "We are in directory ${PWD}"
-else
-    echo "We do not appear to be in the main directory: ${PWD}"
-    echo "There should be a tex file with the same name as the directory"
-    exit 1
-fi
+#if [ -e ${DIR}.tex ]; then
+#    echo "We are in directory ${PWD}"
+#else
+#    echo "We do not appear to be in the main directory: ${PWD}"
+#    echo "There should be a tex file with the same name as the directory"
+#    exit 1
+#fi
 
 # Remove temporary directory if it exists
 test -d tmp-atlaslatex && rm -r tmp-atlaslatex
@@ -92,27 +92,27 @@ function cf_files {
 # Self-update scripts first
 test -d scripts || mkdir scripts
 scriptupdate=0
-for lfile in scripts/atlaslatex_update.sh scripts/atlaslatex_2020.sh; do
-    afile=tmp-atlaslatex/scripts/$(basename $lfile)
-    if [ -e ${lfile} ]; then
-        cmp --silent ${lfile} ${afile}; cmpStatus=$?
-        echo "Comparing ${lfile} with ${afile}"
-        # echo "Status is ${cmpStatus}"
-        if [ $cmpStatus -eq 0 ]; then
-            echo "No change to file ${lfile}"
-        else
-            scriptupdate=1
-            cf_files "${lfile}" "${afile}"
-            echo "+++ ${lfile} updated. You should now run ${lfile}"
-        fi
-    else
-        scriptupdate=1
-        cp ${afile} ${lfile}
-        # Make sure file is exectuable
-        chmod u+x ${lfile}
-        echo "+++ ${lfile} updated. You should now run ${lfile}"
-    fi
-done
+#for lfile in scripts/atlaslatex_update.sh scripts/atlaslatex_2020.sh; do
+#    afile=tmp-atlaslatex/scripts/$(basename $lfile)
+#    if [ -e ${lfile} ]; then
+#        cmp --silent ${lfile} ${afile}; cmpStatus=$?
+#        echo "Comparing ${lfile} with ${afile}"
+#        # echo "Status is ${cmpStatus}"
+#        if [ $cmpStatus -eq 0 ]; then
+#            echo "No change to file ${lfile}"
+#        else
+#            scriptupdate=1
+#            cf_files "${lfile}" "${afile}"
+#            echo "+++ ${lfile} updated. You should now run ${lfile}"
+#        fi
+#    else
+#        scriptupdate=1
+#        cp ${afile} ${lfile}
+#        # Make sure file is exectuable
+#        chmod u+x ${lfile}
+#        echo "+++ ${lfile} updated. You should now run ${lfile}"
+#    fi
+#done
 if [ $scriptupdate -eq 1 ]; then
     # Remove temporary directory
     rm -rf tmp-atlaslatex
