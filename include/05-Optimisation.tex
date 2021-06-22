@@ -39,30 +39,74 @@ $|\ystar| < 0.6$. Figure \ref{fig: string significance as a function of y* cut} 
 \subsection{dijet mass turn-on}
 %\label{section: dijet mass turn-on} % uncomment if label used.
 
-The lowest single jet un-prescaled trigger in 2015 was HLT\_j360, in 2016 was HLT\_j380,
-in 2017 and 2018 is HLT\_j420 which is available in full Run 2 data.
-A mass cut will be applied to remove events where the trigger efficiency is less than 99.5\%.
 
-To measure the \mjj\ turn-on in data, an unbiased sample was obtained using the HLT\_j360 trigger, 
-only data collected in 2015 corresponding to 3.2\,\ifb\ is used in this measurement.
+The \mjj\ turn-on is measured using data by comparing events collected with the highest \pT\ 
+trigger with one with a lower \pt\ threshold.  The efficiency for the HLT\_j420 trigger is calculated by comparing to to the 
+following triggers in each data taking period: 2015 HLT\_j360, 2016 HLT\_j380, 2017 and 2018 HLT\_mu50. We use a muon trigger 
+2017 and 2018 as HLT\_j420 is the only unprescaled jet trigger available. Since the HLT\_mu50 is available for all running periods 
+a comparison is made for the complete Run~2 data set. 
+A mass cut will be applied to remove events where 
+the trigger efficiency is less than 99.5\%.
 
-Figure \ref{fig: mass turn-on yStar 0.6} shows the efficiencies as a function of \mjj\ for $|\ystar|<0.6$ in two g-tag regions for both triggers. The \mjj\ value of the plateau ($\geq$99.5\%) is 1100\,\GeV. Figure \ref{fig: mass turn-on yStar 0.8} shows the efficiencies as a function of \mjj\ for $|\ystar|<0.8$ in two g-tag regions, the plateau value is 1200\,\GeV.
+
+
+Figure \ref{fig: mass turn-on yStar 0.6} shows the efficiencies as a function of \mjj\ for $|\ystar|<0.6$ in 
+two g-tag regions for both triggers.  The results 
+are summarised for data taking periods in Table~\ref{table:massTurnOns} and shown for the full Run~2 data 
+taking period in Figures \ref{fig: mass turn-on yStar 0.6} and \ref{fig: mass turn-on yStar 0.8}. 
+
+
+The \mjj\ mass has been chosend to be slightly above th e value of the plateau ($\geq$99.5\%) and is 1100\,\GeV.
+for $|\ystar|<0.6$ and 1200\,\GeV for $|\ystar|<0.6$ for samples with either one or two gluon tags.
+
+\begin{table}[h]
+	\centering 
+		\caption{ The \mjj\ value of the plateau ($\geq$99.5\%) for each period of data taking. 
+		\label{table:massTurnOns}
+		}
+	\begin{tabular}{SSSSS}
+	\toprule
+\multicolumn{1}{c}{Data Taking Period}  &  \multicolumn{2}{c}{Mass turn on $|\ystar|<0.6$ } &  \multicolumn{2}{c}{Mass turn on $|\ystar|<0.8$ } \\
+ & \multicolumn{1}{c}{$\geq$1 g-tag (\GeV )} &  \multicolumn{1}{c}{2 g-tag (\GeV )} 
+ & \multicolumn{1}{c}{$\geq$1 g-tag (\GeV )} &  \multicolumn{1}{c}{2 g-tag (\GeV )}  \\
+\midrule 
+2015  & 1040 & 1030 & 1160 & 1160 \\
+2016  & 1030 & 1030 & 1160 & 1170 \\
+2017  & 990 & 1000  & 1110 & 1120 \\
+2018  & 1000 & 1010  & 1110 & 1120 \\
+\multicolumn{1}{c}{Run~2} & 1020 & 1030 & 1120 & 1120 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \begin{figure}[htbp]
         \centering
-        \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/h_mass_gj_yStar0p6_ratio.pdf}}
-        \subfigure[2 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/h_mass_gg_yStar0p6_ratio.pdf}}
-        \caption{Efficiencies as a function of \mjj\ for $|\ystar|<0.6$ using HLT\_j420 in the case of (a) $\geq$1 g-tag, (b) 2 g-tag.}
+        \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p6/mjj_turnon_1gluonTag_yStar0p6}}
+        \subfigure[2 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p6/mjj_turnon_2gluonTag_yStar0p6}}
+        \\
+        \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p6/Ratio_mjj_turnon_1gluonTag_yStar0p6}}
+        \subfigure[2 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p6/Ratio_mjj_turnon_2gluonTag_yStar0p6}}
+        
+        \caption{Efficiencies as a function of \mjj\ for $|\ystar|<0.6$ using HLT\_j420 compared with HLT\_mu50 in the case of comparison of mass spectra with 
+        (a) $\geq$1 g-tag, (b) 2 g-tag and the ratio between the two (c) $\geq$1 g-tag and (d) 2 g-tag.}
         \label{fig: mass turn-on yStar 0.6}
 \end{figure}
 
 \begin{figure}[htbp]
         \centering
-        \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/h_mass_gj_yStar0p8_ratio.pdf}}
-        \subfigure[2 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/h_mass_gg_yStar0p8_ratio.pdf}}
-        \caption{Efficiencies as a function of \mjj\ for $|\ystar|<0.8$ using HLT\_j420 in the case of (a) $\geq$1 g-tag, (b) 2 g-tag.}
+        \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p8/mjj_turnon_1gluonTag_yStar0p8}}
+        \subfigure[2 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p8/mjj_turnon_2gluonTag_yStar0p8}}
+        \\
+        \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p8/Ratio_mjj_turnon_1gluonTag_yStar0p8}}
+        \subfigure[2 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/massturnon/yStar0p8/Ratio_mjj_turnon_2gluonTag_yStar0p8}}
+        \caption{Efficiencies as a function of \mjj\ for $|\ystar|<0.8$ using HLT\_j420 compared with HLT\_mu50 in the case of comparison of mass spectra with 
+        (a) $\geq$1 g-tag, (b) 2 g-tag and the ratio between the two (c) $\geq$1 g-tag and (d) 2 g-tag.}
         \label{fig: mass turn-on yStar 0.8}
 \end{figure}
+
+
+
 
 \subsection{Optimised selection}
 
