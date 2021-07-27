@@ -11,13 +11,17 @@ and String will peak at 0.
 
 The significance is given by 
 \begin{equation}
-%\label{eq:signifcanceYstar} % uncomment if label used.
+\label{eq:signifcanceYstar} % uncomment if label used.
 S  = \sqrt{\sum_{i}{2\left[ \left(S_{i}+B_{i} \right)\cdot \ln \left(1+\frac{S_{i}}{B_{i}}\right)-S_{i}\right]}}
 \end{equation}
 where $S_i$ ($B_i$) is the number of signal (background) events in bin $i$. 
-Figure \ref{fig: hprime significance as a function of y* cut} shows $H^\prime$ signal significance as a function 
+For each of the signal samples 95\% of the area under the distribution is 
+calculated and only those bins are used to calculate the significance. %, not the entire \mjj\ distribution.
+Figure \ref{fig: hprime significance as a function of y* cut} shows the $H^\prime$ signal significance as a function 
 of the value of the \ystar\  cut. The significance peaks  around 0.6, so the optimal $y^{*}$ cut for the $H'$ search is 
-$|\ystar| < 0.6$. Figure \ref{fig: string significance as a function of y* cut} shows the String signal significance as a function of \ystar\ cut. The significance peaks at  0.8, so the optimal  cut for the String search is $|\ystar| < 0.8$.
+$|\ystar| < 0.6$. 
+
+Figure \ref{fig: string significance as a function of y* cut} shows the String signal significance as a function of \ystar\ cut. The significance peaks at  0.8, so the optimal  cut for the String search is $|\ystar| < 0.8$.
 
 \begin{figure}[htbp]
         \centering
@@ -28,6 +32,30 @@ $|\ystar| < 0.6$. Figure \ref{fig: string significance as a function of y* cut} 
 \end{figure}
 
 
+Table~\ref{tab:ystarstring} shows the \ystar\ cut leading to the maximum significance value for each of the String masses.
+Figure \ref{fig: string significance as a function of y* cut} shows the String signal significance as a function of \ystar\ cut. The significance peaks at  0.8, so the optimal  cut for the String search is $|\ystar| < 0.8$.
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{SSSS}
+\toprule
+\multicolumn{1}{c}{String Mass (\TeV) } & \multicolumn{3}{c}{Optimal Selection} \\
+& \multicolumn{1}{c|}{Inclusive} & \multicolumn{1}{c|}{$\geq1$ $g$ tag} & \multicolumn{1}{c}{2 $g$ tag} \\
+\midrule
+7.0 & 0.75 & 0.80 & 0.85 \\
+7.5 & 0.75 & 0.80 & 0.85 \\
+8.0 & 0.75 & 0.75 & 0.85 \\
+9.5 & 0.70 & 0.75 & 0.80 \\
+9.0 & 0.70 & 0.75 & 0.70 \\
+\bottomrule
+\end{tabular}
+\end{center}
+\caption{$|y^*|$ selection leading to the maximum significance value calculated using Equation~\ref{eq:signifcanceYstar}.}\label{tab:ystarstring}
+\end{table}
+
+
+
+
 \begin{figure}[htbp]
         \centering
         \subfigure[$\geq$1 g-tag]{\includegraphics[width=0.48\columnwidth]{figures/yStarOptimization/Significance_String_gj.pdf}}
@@ -35,6 +63,9 @@ $|\ystar| < 0.6$. Figure \ref{fig: string significance as a function of y* cut} 
         \caption{String significance as a function \ystar\ cut in the case of (a) $\geq$1 g-tag, (b) 2 g-tag.}
         \label{fig: string significance as a function of y* cut}
 \end{figure}
+
+
+
 
 \subsection{dijet mass turn-on}
 \label{section:dijetmassturn-on} % uncomment if label used.
